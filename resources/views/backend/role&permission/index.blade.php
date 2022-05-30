@@ -27,10 +27,10 @@
                         <div class="card-body">
                             <h4 class="header-title float-left"> Role List</h4>
                             <p class="float-right mb-2">
-                                {{-- @if (Auth::guard('admin')->user()->can('admin.create')) --}}
+                                @if (Auth::guard('admin')->user()->can('admin.create'))
                                 <a class="btn btn-success text-white" href="{{ route('roles.create') }}">Create a new
                                     Role</a>
-                                {{-- @endif --}}
+                                @endif
                             </p>
                             <div class="clearfix">
                             </div>
@@ -57,11 +57,11 @@
                                                 @endforeach
                                             </td>
                                             <td>
-                                                {{-- @if (Auth::guard('admin')->user()->can('admin.edit')) --}}
+                                                @if (Auth::guard('admin')->user()->can('admin.edit'))
                                                       <a class="btn btn-success text-white"
                                                       href="{{ route('roles.edit', $role->id) }}">Edit</a>
-                                                {{-- @endif --}}
-                                                {{-- @if (Auth::guard('admin')->user()->can('admin.delete')) --}}
+                                                @endif
+                                                @if (Auth::guard('admin')->user()->can('admin.delete'))
                                                     <a class="btn btn-danger text-white" href="{{ route('roles.destroy', $role->id) }}"
                                                         onclick="event.preventDefault(); document.getElementById('delete-form-{{ $role->id }}').submit();">
                                                             Delete
@@ -70,7 +70,7 @@
                                                             @method('DELETE')
                                                             @csrf
                                                         </form>
-                                                 {{-- @endif --}}
+                                                 @endif
 
                                             </td>
 
