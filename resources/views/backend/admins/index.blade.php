@@ -27,10 +27,10 @@
                         <div class="card-body">
                             <h4 class="header-title float-left"> Admin List</h4>
                             <p class="float-right mb-2">
-                                {{-- @if (Auth::guard('admin')->user()->can('admin.create')) --}}
+                                @if (Auth::guard('admin')->user()->can('admin.create'))
                                      <a class="btn btn-success text-white" href="{{ route('admins.create') }}">Create a new
                                     Admin</a>
-                                 {{-- @endif --}}
+                                 @endif
                             </p>
                             <div class="clearfix">
                             </div>
@@ -59,10 +59,10 @@
                                                 @endforeach
                                             </td>
                                             <td>
-                                                {{-- @if (Auth::guard('admin')->user()->can('admin.edit')) --}}
+                                                @if (Auth::guard('admin')->user()->can('admin.edit'))
                                                     <a class="btn btn-success text-white" href="{{ route('admins.edit', $admin->id) }}">Edit</a>
-                                                {{-- @endif --}}
-                                                {{-- @if (Auth::guard('admin')->user()->can('admin.delete')) --}}
+                                                @endif
+                                                @if (Auth::guard('admin')->user()->can('admin.delete'))
                                                 <a class="btn btn-danger text-white" href="{{ route('admins.destroy', $admin->id) }}"
                                                 onclick="event.preventDefault(); document.getElementById('delete-form-{{ $admin->id }}').submit();">
                                                     Delete
@@ -71,7 +71,7 @@
                                                     @method('DELETE')
                                                     @csrf
                                                 </form>
-                                                {{-- @endif --}}
+                                                @endif
                                             </td>
 
 
