@@ -104,7 +104,7 @@ $usr = Auth::guard('admin')->user();
                 </li>
                 @endif
 
-                {{-- @if ($usr->can('admin.create') || $usr->can('admin.view') || $usr->can('admin.edit') || $usr->can('admin.delete')) --}}
+                @if ($usr->can('admin.create') || $usr->can('admin.view') || $usr->can('admin.edit') || $usr->can('admin.delete'))
                 <li>
                     <a href="#sidebarAdmin" data-bs-toggle="collapse" aria-expanded="false"
                         aria-controls="sidebarAdmin">
@@ -115,18 +115,18 @@ $usr = Auth::guard('admin')->user();
                     <div class="collapse {{ Route::is('admins.create') || Route::is('admins.index') || Route::is('admins.edit') || Route::is('admin.show') ? 'in' : '' }}"
                         id="sidebarAdmin">
                         <ul class="nav-second-level">
-                            {{-- @if ($usr->can('admin.view')) --}}
+                            @if ($usr->can('admin.view'))
                             <li class="{{ Route::is('admins.index') || Route::is('admins.edit') ? 'active' : '' }}">
                                 <a href="{{ route('admins.index') }}">All Admins</a></li>
-                            {{-- @endif --}}
-                            {{-- @if ($usr->can('admin.create')) --}}
+                            @endif
+                            @if ($usr->can('admin.create'))
                             <li class="{{ Route::is('admins.create') ? 'active' : '' }}"><a
                                     href="{{ route('admins.create') }}">Create Admin</a></li>
-                            {{-- @endif --}}
+                            @endif
                         </ul>
                     </div>
                 </li>
-                {{-- @endif --}}
+                @endif
 
                 <li>
                     <a href="#sidebarBlog" data-bs-toggle="collapse" aria-expanded="false" aria-controls="sidebarBlog">
