@@ -80,7 +80,7 @@ $usr = Auth::guard('admin')->user();
                     </a>
                 </li>
 
-                {{-- @if ($usr->can('role.create') || $usr->can('role.view') || $usr->can('role.edit') || $usr->can('role.delete')) --}}
+                @if ($usr->can('role.create') || $usr->can('role.view') || $usr->can('role.edit') || $usr->can('role.delete'))
                 <li>
                     <a href="#sidebarRoles" data-bs-toggle="collapse" aria-expanded="false"
                         aria-controls="sidebarRoles">
@@ -91,18 +91,18 @@ $usr = Auth::guard('admin')->user();
                     <div class="collapse {{ Route::is('roles.create') || Route::is('roles.index') || Route::is('roles.edit') || Route::is('roles.show') ? 'in' : '' }}"
                         id="sidebarRoles">
                         <ul class="nav-second-level ">
-                            {{-- @if ($usr->can('role.create')) --}}
+                            @if ($usr->can('role.create'))
                             <li class="{{ Route::is('roles.create') ? 'active' : '' }}"><a
                                     href="{{ route('roles.create') }}">Create Role</a></li>
-                            {{-- @endif --}}
-                            {{-- @if ($usr->can('role.view')) --}}
+                            @endif
+                            @if ($usr->can('role.view'))
                             <li class="{{ Route::is('roles.index') || Route::is('roles.edit') ? 'active' : '' }}"><a
                                     href="{{ route('roles.index') }}">All Roles</a></li>
-                            {{-- @endif --}}
+                            @endif
                         </ul>
                     </div>
                 </li>
-                {{-- @endif --}}
+                @endif
 
                 {{-- @if ($usr->can('admin.create') || $usr->can('admin.view') || $usr->can('admin.edit') || $usr->can('admin.delete')) --}}
                 <li>
