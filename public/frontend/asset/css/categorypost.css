@@ -1,0 +1,114 @@
+.big_category_header {
+    background-color: #3399FF;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    height: 60px;
+    object-fit: fill;
+    padding: 0px 5px;
+}
+
+
+
+.category_cat_head h1 a {
+    color: #FFFF00;
+    text-decoration: none;
+    padding: 20px 0px;
+    display: inline-block;
+    margin-top: -6px;
+    font-size: 30px;
+}
+.category_cat_head h1 {
+    margin: 0px;
+    padding: 0px;
+    font-size: 36px;
+}
+.sub_category_menu {
+    min-height: 3px;
+    background: #CC0000;
+}
+.paddingTopBottom20 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.single-block img {
+    width: 100%;
+    font-size: 12px;
+    line-height: 1;
+    color: #a2a2a2;
+    margin-top: 18px;
+}
+.featured-image img {
+    width: 100%;
+}
+.single-block a:first-child {
+    max-height: inherit;
+}
+.single-block.cat-block {
+    /* height: 90px; */
+    min-height: 0;
+    overflow: hidden;
+}
+.img-box.single-post img {
+	height: 100px;
+}
+.single-block .img-box {
+    position: relative;
+}
+.single-block:hover img {
+    opacity: 0.95;
+}
+.paddingRight10 {
+    padding-right: 10px;
+}
+.paddingTop20 {
+    padding-top: 20px;
+}
+.single-block a:first-child {
+    max-height: inherit;
+}
+.single-block a {
+    display: block;
+    overflow: hidden;
+    max-height: 45px;
+}
+.pagination > li:first-child > a, .pagination > li:first-child > span {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.pagination > .active > a, .pagination > .active > span {
+    color: #fff;
+}
+.pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
+    background-color: #cd171e;
+    border-color: #cd171e;
+}
+.pagination>li>a, .pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.pagination {
+    display: block;
+    text-align: center;
+}
+.text-center {
+    text-align: center;
+}
+.pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+.pagination > li {
+    display: inline-block;
+}

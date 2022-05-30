@@ -1,0 +1,54 @@
+.col-md-9 {
+    width: 75%;
+}
+
+.single-block .img-box img {
+	position: relative;
+	height: 200px;
+	object-fit: fill;
+}
+
+.breadcrumb {
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    list-style: none;
+    background-color: #4a9ff3;
+    border-radius: 4px;
+    height: 50px;
+    padding: 17px;
+}
+.breadcrumb li a {
+    color: #b30f0f;
+    padding: 12px;
+}
+.breadcrumb-item.active {
+    color: #000000;
+}
+.breadcrumb>li {
+    display: inline-block;
+}
+ul.social-media.custom-social-share {
+    display: inline-flex;
+    list-style: none;
+    float: right;
+    padding: 0 100px;
+    border-radius: -9;
+}
+.marginTopBottom20 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+i.fa.fa-facebook {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    /* color: inherit; */
+}
