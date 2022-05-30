@@ -32,7 +32,7 @@ use EasyBanglaDate\Types\BnDateTime;
                             </form>
                         </div>
                         <div class="top-bar-social-icon d-sm-block d-none">
-                            <a href="https://www.facebook.com/dailyrunnernews"><i class="fab fa-facebook-square"></i></a>
+                            <a href="https://www.facebook.com/dailyrunnernews" target="_blank"><i class="fab fa-facebook-square"></i></a>
                             <a href=""><i class="fab fa-instagram-square"></i></a>
                             <a href=""><i class="fab fa-twitter-square"></i></a>
                             <a href=""><i class="fab fa-linkedin"></i></a>
