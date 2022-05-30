@@ -11,6 +11,7 @@ class Tags extends Model
 
     protected $fillable = [
         'name',
+        'slug',
         'author_id',
         'update_author_id'
 
