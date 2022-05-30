@@ -299,7 +299,7 @@
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn btn-success">Add News</button>
+                            <button type="submit" class="btn btn-success">Update News</button>
                             </form>
 
                         </div><!-- end col -->

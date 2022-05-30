@@ -68,7 +68,7 @@
                                             <td>
                                                 {{ Carbon\Carbon::parse($upazila->created_at)->diffForHumans() }}
                                             </td>
-                                            <td>
+                                            <td style="display: inline-block">
 
                                                 <a href="{{ route('upazila.edit', $upazila->id) }}"
                                                     class="btn btn-sm btn-info icon-pencil7">Edit</a>

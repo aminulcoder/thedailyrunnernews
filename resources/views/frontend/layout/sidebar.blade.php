@@ -18,7 +18,7 @@ if ($vot && $vot->total_vot>0) {
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <span>সরাসরি</span>
-                    <span class="text-danger fw-bold">&bull; Live</span>
+                    <span class="text-danger fw-bold">&bull; ভিডিও</span>
                 </div>
                 {{-- <div class="card-body"> --}}
                 <iframe width="100%" height="auto" src="https://www.youtube.com/embed/MSVPhMPtAk4"
