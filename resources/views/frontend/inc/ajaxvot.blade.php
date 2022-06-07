@@ -1,17 +1,31 @@
 @php
 use App\Models\Vot\Vot;
+use Rakibhstu\Banglanumber\NumberToBangla;
+$numto = new NumberToBangla();
+
 $vot = Vot::get()->last();
 if ($vot && $vot->total_vot > 0) {
     $yes = sprintf('%.2f', (100 * $vot->yes) / $vot->total_vot);
     $no = sprintf('%.2f', (100 * $vot->no) / $vot->total_vot);
     $no_comment = sprintf('%.2f', (100 * $vot->no_comment) / $vot->total_vot);
+
+
 }
 @endphp
 
+@php
+
+
+
+
+
+@endphp
 
 <div class="card">
     <div class="card-header">
         <h4>অনলাইন জরিপ</h4>
+{{-- {{$text}} --}}
+
     </div>
     @if ($vot)
         <div class="card-body">
@@ -19,7 +33,7 @@ if ($vot && $vot->total_vot > 0) {
             <div class="row">
                 <div class="col-sm-12 mt-4">
                     @if ($vot->yes > 0)
-                        <label for="">হ্যাঁ  ({{$vot->yes}})</label>
+                        <label for="">হ্যাঁ  ({{ $numto->bnNum($vot->yes)}})</label>
                         <div class="row align-items-center g-0 mb-2 pb-1">
                             <div class="col">
                                 <div class="progress progress-sm">
@@ -31,13 +45,13 @@ if ($vot && $vot->total_vot > 0) {
                             <div class="col-auto">
 
                                 <div class="fw-medium ms-2">
-                                    {{ $yes }}% </div>
+                                    {{$numto->bnNum($yes)}}% </div>
                             </div>
                         </div>
                     @endif
 
                     @if ($vot->no > 0)
-                        <label for="">না ({{$vot->no}})</label>
+                        <label for="">না ({{$numto->bnNum($vot->no)}})</label>
                         <div class="row align-items-center g-0 mb-2 pb-1">
                             <div class="col">
                                 <div class="progress progress-sm">
@@ -49,14 +63,14 @@ if ($vot && $vot->total_vot > 0) {
                             <div class="col-auto">
 
                                 <div class="fw-medium ms-2">
-                                    {{ $no }}%</div>
+                                    {{$numto->bnNum($no)}}%</div>
                             </div>
                         </div>
                     @endif
 
 
                     @if ($vot->no_comment > 0)
-                        <label for=""> মন্তব্য নেই ({{$vot->no_comment}})</label>
+                        <label for=""> মন্তব্য নেই ({{$numto->bnNum($vot->no_comment)}})</label>
                         <div class="row align-items-center g-0 mb-2 pb-1">
                             <div class="col">
                                 <div class="progress progress-sm">
@@ -67,7 +81,9 @@ if ($vot && $vot->total_vot > 0) {
                             </div>
                             <div class="col-auto">
                                 <div class="fw-medium ms-2">
-                                    {{ $no_comment }}%</div>
+
+                                    {{$numto->bnNum($no_comment)}}%
+                                </div>
                             </div>
                         </div>
                     @endif

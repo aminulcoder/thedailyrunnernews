@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Vot\Vot;
 use Illuminate\Http\Request;
 
+
+
 class AjaxvotController extends Controller
 {
     public function index()
