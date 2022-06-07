@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\Location\DivisionController;
 use App\Http\Controllers\Backend\Vot\VotController;
+use App\Http\Controllers\Frontend\AjaxvotController;
 use App\Http\Controllers\Frontend\CategoryNewsController;
 use App\Http\Controllers\Frontend\CategorywisenewsController;
 use App\Http\Controllers\Frontend\HomepageController;
@@ -49,3 +50,5 @@ Route::get('/locationnews',[LpostController::class,'locationWisenews'])->name('l
 Route::get('search', [SearchController::class, 'search'])->name('search.page');
 
 
+Route::get('ajaxvot', [AjaxvotController::class, 'index']);
+Route::post('ajax/vot/update', [AjaxvotController::class, 'updateOnlineVot']);

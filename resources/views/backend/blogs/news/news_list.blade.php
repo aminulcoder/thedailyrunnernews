@@ -39,12 +39,12 @@
                             </div>
                             </p>
 
-                            <table id="basic-datatable" class="table dt-responsive nowrap w-100">
+                            <table id="basic-datatable" class="table dt-responsive nowrap w-100"  style="width:100%">
                                 <thead>
                                     <tr>
                                         <th>Sl</th>
                                         <th>thumbnail</th>
-                                        <th>title</th>
+                                        <th style="width: 50px;">title</th>
                                         <th>Category name</th>
                                         <th>status</th>
                                         <th>Action</th>

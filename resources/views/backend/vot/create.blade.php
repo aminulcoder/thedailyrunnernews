@@ -101,3 +101,9 @@
 
     </div>
 @endsection
+
+
+@push('script')
+
+
+@endpush

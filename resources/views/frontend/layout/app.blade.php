@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{{ asset('frontend/asset/css/singlepost.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/asset/css/categorypost.css') }}">
     <link rel="stylesheet" href="{{asset('frontend/asset/css/responsive.css')}}">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 
 
 
