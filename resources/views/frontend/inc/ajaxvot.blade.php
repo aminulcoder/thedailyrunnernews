@@ -13,19 +13,10 @@ if ($vot && $vot->total_vot > 0) {
 }
 @endphp
 
-@php
-
-
-
-
-
-@endphp
 
 <div class="card">
     <div class="card-header">
         <h4>অনলাইন জরিপ</h4>
-{{-- {{$text}} --}}
-
     </div>
     @if ($vot)
         <div class="card-body">
@@ -67,8 +58,7 @@ if ($vot && $vot->total_vot > 0) {
                             </div>
                         </div>
                     @endif
-
-
+                    
                     @if ($vot->no_comment > 0)
                         <label for=""> মন্তব্য নেই ({{$numto->bnNum($vot->no_comment)}})</label>
                         <div class="row align-items-center g-0 mb-2 pb-1">
@@ -97,7 +87,6 @@ if ($vot && $vot->total_vot > 0) {
             class="mt-1 survey-hide" action="" method="post"
                 id="surveyForm" >
 
-
                 <input type="hidden" name="id" value="{{ $vot->id}}">
                 <table cellpadding="0" cellspacing="5" border="0" width="100%" class="survey-tbl mb-2">
                     <tbody>
@@ -106,7 +95,6 @@ if ($vot && $vot->total_vot > 0) {
                                 <input type="radio" name="vot" value="yes ">
                             </td>
                             <td>হ্যাঁ</td>
-
                             <td class="text-center">
                                 <input type="radio" name="vot"  value="no ">
                             </td>
@@ -120,10 +108,7 @@ if ($vot && $vot->total_vot > 0) {
                     </tbody>
                 </table>
                 <button type="submit"  class="btn btn-success p-2  onlinePoll"> মতামত দিন </button>
-
             </form>
-
-
         </div>
     @endif
 </div>
