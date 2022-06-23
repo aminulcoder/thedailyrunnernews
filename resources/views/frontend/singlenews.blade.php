@@ -11,6 +11,21 @@ $postdate = $bongabda->getDateTime()->format('l jS F Y');
 @endphp
 
 @extends('frontend.layout.app')
+@section('OG')
+    <!-- Facebook & Linkedit Open Graph -->
+    <meta property="og:url" content="{{ route('singlenews', $news->id) }}" />
+    <meta property="og:type" content="news" />
+    <meta property="og:title" content="{{ $news->title }}" />
+    <meta property="og:description" content="{{ $news->title }}" />
+    <meta property="og:thumbnail" content="{{ $news->thumbnail }}" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@dailyrunnernews" />
+    <meta property="og:title" content="{{ $news->title }}" />
+    <meta property="og:description" content="{{ $news->title }} " />
+    <meta property="og:thumbnail" content="{{ $news->thumbnail }}" />
+@endsection
 
 @section('content')
     <div class="container">
@@ -57,6 +72,7 @@ $postdate = $bongabda->getDateTime()->format('l jS F Y');
                     </div>
                     <div class="content-details">
                         {!! $news->content !!}
+                        {{-- {{Str::substr($news->content, 0, 200) }} --}}
                     </div>
 
                     <!-- Advertisement B -->
