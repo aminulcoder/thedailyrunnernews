@@ -1,24 +1,23 @@
 @php
 
-use EasyBanglaDate\Types\BnDateTime;
+// use EasyBanglaDate\Types\BnDateTime;
 
 // $bongabda = new BnDateTime($news->created_at, new DateTimeZone('Asia/Dhaka'));
 // $postdate= $bongabda->getDateTime()->format('l jS F Y b h:i:s')
 // $postdate = $bongabda->getDateTime()->format('l jS F Y');
 
 // echo $news->created_at;
-
 @endphp
 
 @extends('frontend.layout.app')
 @section('OG')
     <!-- Facebook & Linkedit Open Graph -->
-    <meta property="og:url" content="{{ route('singlenews', $news->id) }}" />
+     <meta property="og:url" content="{{ route('singlenews', $news->id) }}" />
     <meta property="og:type" content="news" />
     <meta property="og:title" content="{{ $news->title }}" />
     <meta property="og:description" content="{{ $news->title }}" />
     <meta property="og:thumbnail" content="{{ $news->thumbnail }}" />
-    <!-- Twitter Card -->
+     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@dailyrunnernews" />
@@ -33,7 +32,7 @@ use EasyBanglaDate\Types\BnDateTime;
             <div class="col-md-8 col-lg-push-3 col-md-push-0 my-4">
                 <div class="box-white marginBottom20 visible-xs hidden-print">
                     <ol class="breadcrumb">
-                        <li><a href="{{route('homepage')}}"> <i class="fa fa-home text-danger"></i></a></li>/
+                        <li><a href="{{ route('homepage') }}"> <i class="fa fa-home text-danger"></i></a></li>/
                         <li><a href="#"> {{ $news->category->name }} </a></li>
                     </ol>
                 </div>
@@ -85,15 +84,15 @@ use EasyBanglaDate\Types\BnDateTime;
                     <a href="#"><i class="fa-solid fa-eye"></i>views</a>
                     <div class="share-button">
                         <samp style="font-size: 25px"><i class="fa-solid fa-share-nodes"></i> Share!</samp>
-                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('singlenews', $news->slug) }}"
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('singlenews', $news->id) }}"
                             target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://twitter.com/intent/tweet?url={{ route('singlenews', $news->slug) }}"
+                        <a href="https://twitter.com/intent/tweet?url={{ route('singlenews', $news->id) }}"
                             target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ route('singlenews', $news->slug) }}"
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ route('singlenews', $news->id) }}"
                             target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="whatsapp://send?text={{ route('singlenews', $news->slug) }}" target="_blank"><i
+                        <a href="whatsapp://send?text={{ route('singlenews', $news->id) }}" target="_blank"><i
                                 class="fa-brands fa-whatsapp"></i></a>
-                        <a href="//pinterest.com/pin/create/link/?url={{ route('singlenews', $news->slug) }}"
+                        <a href="//pinterest.com/pin/create/link/?url={{ route('singlenews', $news->id) }}"
                             target="_blank"><i class="fa-brands fa-pinterest"></i></a>
                     </div>
                 </article>
@@ -229,6 +228,11 @@ use EasyBanglaDate\Types\BnDateTime;
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
             Disqus.</a></noscript>
     <script id="dsq-count-scr" src="//newspaper-9.disqus.com/count.js" async></script>
+
+
+    <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0&appId=1048590272558271&autoLogAppEvents=1" nonce="d8pdSeS6"></script>
+
 @endpush
 
 
@@ -250,11 +254,10 @@ use EasyBanglaDate\Types\BnDateTime;
             background-color: rgb(95, 95, 185);
             color: #fff;
         }
-
     </style>
 
 
-<style>
+    <style>
 
-</style>
+    </style>
 @endpush
