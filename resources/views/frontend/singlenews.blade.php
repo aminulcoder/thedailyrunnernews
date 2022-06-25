@@ -16,14 +16,14 @@
     <meta property="og:type" content="news" />
     <meta property="og:title" content="{{ $news->title }}" />
     <meta property="og:description" content="{{ $news->title }}" />
-    <meta property="og:thumbnail" content="{{ asset('storage/images/' . $news->thumbnail) }}" />
+    <meta property="og:image" content="{{ asset('storage/images/' . $news->thumbnail) }}" />
      <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@dailyrunnernews" />
     <meta property="og:title" content="{{ $news->title }}" />
     <meta property="og:description" content="{{ $news->title }} " />
-    <meta property="og:thumbnail" content="{{ asset('storage/images/' . $news->thumbnail) }}" />
+    <meta property="og:image" content="{{ asset('storage/images/' . $news->thumbnail) }}" />
 @endsection
 
 @section('content')
@@ -260,4 +260,6 @@
     <style>
 
     </style>
+@endpush
+@push('og_tag')
 @endpush
