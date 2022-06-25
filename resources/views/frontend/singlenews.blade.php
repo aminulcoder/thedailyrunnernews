@@ -16,14 +16,14 @@
     <meta property="og:type" content="news" />
     <meta property="og:title" content="{{ $news->title }}" />
     <meta property="og:description" content="{{ $news->title }}" />
-    <meta property="og:thumbnail" content="{{ $news->thumbnail }}" />
+    <meta property="og:thumbnail" content="{{ asset('storage/images/' . $news->thumbnail) }}" />
      <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@dailyrunnernews" />
     <meta property="og:title" content="{{ $news->title }}" />
     <meta property="og:description" content="{{ $news->title }} " />
-    <meta property="og:thumbnail" content="{{ $news->thumbnail }}" />
+    <meta property="og:thumbnail" content="{{ asset('storage/images/' . $news->thumbnail) }}" />
 @endsection
 
 @section('content')
@@ -64,7 +64,7 @@
                     <div class="paddingTop10">
                         <div class="featured-image">
                             <img src="{{ asset('storage/images/' . $news->thumbnail) }}" class="img-fluid"
-                                alt="{{ $news->thumbnail }}">
+                                alt="{{ $news->title }}">
                         </div>
                         <div class="caption"> </div>
 
