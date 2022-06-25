@@ -12,14 +12,14 @@ use EasyBanglaDate\Types\BnDateTime;
 <section>
     <div class="header-top">
         <div class="container top-bar-container">
-            <div class="row">
-                <div class="col-md-6">
+            <div class="row align-items-center">
+                <div class="col-md-6 ">
                     <div class="top-bar-link ">
                         <ul>
                             <li>যশোর</li>
                             <li>{{ $englishDate }}</li>
                             <li>{{ $banglahDate }}</li>
-
+                            <li class="paragraph-item">পরীক্ষা মূলক সম্প্রচার</li>
                         </ul>
                     </div>
                 </div>
@@ -60,3 +60,10 @@ use EasyBanglaDate\Types\BnDateTime;
         </div>
     </div>
 </section>
+@push('style')
+<style>
+    li.paragraph-item {
+    float: right;
+}
+</style>
+@endpush

@@ -22,7 +22,6 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@dailyrunnernews" />
     <meta property="og:title" content="{{ $news->title }}" />
-    {{-- <meta property="og:description" content="{{ $news->title }} " /> --}}
     <meta property="og:description" content="{{strip_tags($news->content)}} " />
     <meta property="og:image" content="{{ asset('storage/images/' . $news->thumbnail) }}" />
 @endsection

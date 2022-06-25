@@ -80,6 +80,17 @@ body {
     padding: 6px 0;
 }
 
+li.paragraph-item {
+    float: right;
+    font-size: 30px;
+    text-align: center;
+    margin: -5px 32px;
+}
+.top-bar-link ul {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+}
 /* top bar container end  */
 
 
