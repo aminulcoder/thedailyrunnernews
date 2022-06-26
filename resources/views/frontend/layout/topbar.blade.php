@@ -10,20 +10,23 @@ use EasyBanglaDate\Types\BnDateTime;
 
 
 <section>
+    <div>
+        <h1 class="paragraph-item" style="font-size: 25px !important;color:red; ">পরীক্ষা মূলক সম্প্রচার</h1>
+    </div>
     <div class="header-top">
         <div class="container top-bar-container">
             <div class="row align-items-center">
-                <div class="col-md-6 ">
+                <div class="col-md-7 ">
                     <div class="top-bar-link ">
                         <ul>
                             <li>যশোর</li>
                             <li>{{ $englishDate }}</li>
                             <li>{{ $banglahDate }}</li>
-                            <li class="paragraph-item" style="font-size: 15px !important;color:red">পরীক্ষা মূলক সম্প্রচার</li>
+
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-12" id="searchdiv">
+                <div class="col-md-5 col-sm-12" id="searchdiv">
                     <div class="top-header-right">
                         <div class="search-container d-lg-block d-none">
                             <form action="{{ route('search.page') }}" method="GET">

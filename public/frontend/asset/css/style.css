@@ -79,12 +79,13 @@ body {
     justify-content: end;
     padding: 6px 0;
 }
-li.paragraph-item {
-    float: right;
-    font-size: 30px;
+h1.paragraph-item {
     text-align: center;
-    margin: -5px 32px;
+    margin: 10px;
 }
+
+
+
 .top-bar-link ul {
     display: flex;
     align-items: center;
@@ -562,11 +563,6 @@ ul {
 .e-paper .card-header a {
     text-decoration: none;
     color: black;
-}
-
-.e-paper .card-body a {
-    /* display: inline-block; */
-
 }
 
 .e-paper {

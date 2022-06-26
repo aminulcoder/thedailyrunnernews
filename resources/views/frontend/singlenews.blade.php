@@ -4,7 +4,7 @@ use EasyBanglaDate\Types\BnDateTime;
 
 $bongabda = new BnDateTime($news->created_at, new DateTimeZone('Asia/Dhaka'));
 // $postdate= $bongabda->getDateTime()->format('l jS F Y b h:i:s')
-$postdate = $bongabda->getDateTime()->format('l jS F Y');
+$postdate = $bongabda->getDateTime()->format('l jS F Y');   
 
 // echo $news->created_at;
 @endphp
