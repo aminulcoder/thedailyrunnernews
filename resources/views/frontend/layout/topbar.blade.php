@@ -19,7 +19,7 @@ use EasyBanglaDate\Types\BnDateTime;
                             <li>যশোর</li>
                             <li>{{ $englishDate }}</li>
                             <li>{{ $banglahDate }}</li>
-                            <li class="paragraph-item">পরীক্ষা মূলক সম্প্রচার</li>
+                            <li class="paragraph-item" style="font-size: 15px !important;color:red">পরীক্ষা মূলক সম্প্রচার</li>
                         </ul>
                     </div>
                 </div>
