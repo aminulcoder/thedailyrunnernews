@@ -1,10 +1,10 @@
 @php
 
-// use EasyBanglaDate\Types\BnDateTime;
+use EasyBanglaDate\Types\BnDateTime;
 
-// $bongabda = new BnDateTime($news->created_at, new DateTimeZone('Asia/Dhaka'));
+$bongabda = new BnDateTime($news->created_at, new DateTimeZone('Asia/Dhaka'));
 // $postdate= $bongabda->getDateTime()->format('l jS F Y b h:i:s')
-// $postdate = $bongabda->getDateTime()->format('l jS F Y');
+$postdate = $bongabda->getDateTime()->format('l jS F Y');
 
 // echo $news->created_at;
 @endphp
@@ -50,7 +50,7 @@
                         <div class="row mb-2">
                             <div class="col-sm-8">
                                 <span class="small text-muted time-with-author">
-                                    {{-- <i class="fa fa fa-clock-o text-danger"></i> {{ $postdate }} <br> --}}
+                                    <i class="fa fa fa-clock-o text-danger"></i> {{ $postdate }} <br>
 
 
 
