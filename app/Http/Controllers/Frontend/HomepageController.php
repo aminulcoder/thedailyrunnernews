@@ -18,14 +18,15 @@ class HomepageController extends Controller
 {
     public function homepage()
     {
-        $news         = News::all();
+        $news         = News::latest()->get();
         $lastnews     = News::latest()->first();
         $latestnews   = News::latest()->take(4)->get();
         $natinoal     = News::take(6)->latest()->get();
         $categorynews = Category::with('news')->get();
+        // return  $categorynews;
         $vots         = Vot::take(1)->latest()->get();
         $divissions   = Division::all();
-        
+
         return view('frontend.homepage', compact('news', 'latestnews', 'natinoal', 'categorynews', 'lastnews', 'vots', 'divissions'));
     }
 }
