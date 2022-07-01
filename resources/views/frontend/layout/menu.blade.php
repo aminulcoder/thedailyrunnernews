@@ -13,11 +13,8 @@ $categories = App\Models\Blog\Category::with('subcategories')->get();
                             class="img-fluid" style="height: 50px;" alt="">
                     </a>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-                        @foreach ($categories as $category)
-                            {{-- @php
-                                $subcategories = App\Models\Blog\SubCategory::where('category_id', $category->id)->get();
-                            @endphp --}}
+                        @foreach (array_slice(json_decode($categories), 0, 9) as $category)
+                      
 
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0 main-menu">
                                 <li><a href="{{ route('category.news', $category->id) }}">{{ $category->name }} <i
@@ -56,7 +53,7 @@ $categories = App\Models\Blog\Category::with('subcategories')->get();
                             @endforeach
 
                         </div>
-                        <div class="row mega-menu-bottom">
+                        {{-- <div class="row mega-menu-bottom">
                             <div class="col-lg-2">
                                 <a href=""><i class="fas fa-file-alt text-success"></i> আজকের পত্রিকা</a>
                             </div>
@@ -85,7 +82,7 @@ $categories = App\Models\Blog\Category::with('subcategories')->get();
                                 <a href=""> <i class="fas fa-briefcase text-success"></i> বিজ্ঞাপন</a>
                             </div>
 
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <!-- mega menu  section-end -->

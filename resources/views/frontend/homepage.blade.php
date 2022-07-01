@@ -8,7 +8,7 @@
 @push('script')
     <script>
         $(document).ready(function() {
-            let _token   = $('meta[name="csrf-token"]').attr('content');
+            let _token = $('meta[name="csrf-token"]').attr('content');
 
 
             $(window).on('load', function() {
@@ -24,6 +24,9 @@
                         // console.log(data);
                         $('#onlinevot').empty();
                         $('#onlinevot').append(data);
+                    },
+                    error: function(err){
+                        console.log(err)
                     }
                 });
             }
@@ -38,15 +41,18 @@
                     url: '/ajax/vot/update',
                     type: 'POST',
                     // dataType: 'JSON',
-                    data:{
+                    data: {
                         _token: _token,
                         id,
                         vot
                     },
                     success: function(data) {
-                        loadVot();
+                        // loadVot();
                         // console.log('data',data)
                         // console.log('post request send');
+                    },
+                    error: function(err){
+                        console.log(err)
                     }
                 });
 

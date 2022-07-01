@@ -1,4 +1,7 @@
 @extends('backend.layout.app')
+@section('title')
+Edit Online Pull
+@endsection
 @section('content')
     <div class="container-fluid">
         <div class="content">
@@ -14,7 +17,7 @@
                                 <ol class="breadcrumb m-0">
                                     <li class="breadcrumb-item"><a href="javascript: void(0);">Heshelghor</a></li>
                                     <li class="breadcrumb-item"><a href="javascript: void(0);">eCommerce</a></li>
-                                    <li class="breadcrumb-item active">News List</li>
+                                    <li class="breadcrumb-item active">Edit Vot</li>
                                 </ol>
                             </div>
                         </div>

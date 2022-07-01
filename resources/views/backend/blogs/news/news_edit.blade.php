@@ -1,7 +1,7 @@
 @extends('backend.layout.app')
-@section('title')
-    create News
-@endsection
+    @section('title')
+        create News
+    @endsection
 @section('content')
     <div class="container-fluid">
         <div class="content">

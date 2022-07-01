@@ -4,7 +4,6 @@ $(document).ready(function () {
         $('#menu').slideToggle('500')
 
     });
-
     $("#more-menu").click(function(){
         $("#megaMenu").toggle();
    });

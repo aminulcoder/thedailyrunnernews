@@ -15,8 +15,8 @@
                             <h4 class="page-title">Create News</h4>
                             <div class="page-title-right">
                                 <ol class="breadcrumb m-0">
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Heshelghor</a></li>
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">eCommerce</a></li>
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Dailyrunnernews</a></li>
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Paper</a></li>
                                     <li class="breadcrumb-item active">News List</li>
                                 </ol>
                             </div>
@@ -44,8 +44,9 @@
                                             enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-group">
-                                                <label for="title">Title</label>
-                                                <input type="text" name="title" class="form-control" id="title"
+                                                <label for="title">Title <span
+                                                    class="text-danger">*</span></label>
+                                                <input type="text" name="title" class="form-control  @error('title') is-invalid @enderror " id="title"
                                                     placeholder="Title" spellcheck="false" data-ms-editor="true">
 
                                                 @error('title')
@@ -58,7 +59,9 @@
                                             {{-- <div id="summernote"></div> --}}
                                             <div class="form-group mt-2">
                                                 <div class="form-group">
-                                                    <textarea class="form-control" name="content" id="summernote"></textarea>
+                                                    <label for="title">Descrription <span
+                                                        class="text-danger">*</span></label>
+                                                    <textarea class="form-control  @error('content') is-invalid @enderror " name="content" id="summernote"></textarea>
                                                 </div>
                                             </div>
                                             <div class="card mt-2">
@@ -85,8 +88,8 @@
                                                         @enderror
                                                     </div>
                                                     <div class="mb-2 row">
-                                                        <label class="col-md-2 col-form-label" for="simpleinput">
-                                                            Thumbnail</label>
+                                                        <label class="col-md-2 col-form-label" for="simpleinput">Thumbnail <span
+                                                            class="text-danger">*</span> </label>
                                                         <div class="col-md-10">
                                                             <input name="thumbnail" type="file"
                                                                 class="form-control  @error('thumbnail') is-invalid @enderror "
@@ -137,8 +140,7 @@
 
 
                                                     <div class="form-group my-2">
-                                                        <label>blog_meta_description<span
-                                                                class="text-danger">*</span></label>
+                                                        <label>blog_meta_description</label>
                                                         <textarea name="blog_meta_description" id="summernote" type="text"
                                                             class="form-control @error('blog_meta_description') is-invalid @enderror"
                                                             rows="5"
@@ -158,7 +160,8 @@
                                                 <div class="card-body">
                                                     <div class="mb-2 row">
                                                         <label class="col-md-2 col-form-label" for="simpleinput">
-                                                            Category</label>
+                                                            Category <span
+                                                            class="text-danger">*</span></label>
                                                         <div class="col-md-10">
                                                             <select
                                                                 class="form-select @error('category_id') is-invalid @enderror"

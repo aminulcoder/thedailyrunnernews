@@ -1,4 +1,7 @@
 @extends('backend.layout.app')
+@section('title')
+Online Pull
+@endsection
 @section('content')
     <div class="content">
         <!-- Start Content-->
@@ -10,9 +13,9 @@
                         <h4 class="page-title">Datatables</h4>
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Minton</a></li>
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                                <li class="breadcrumb-item active">Datatables</li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Dailyrunnernews</a></li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Paper</a></li>
+                                <li class="breadcrumb-item active">vot</li>
                             </ol>
                         </div>
                     </div>

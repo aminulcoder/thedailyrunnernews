@@ -18,6 +18,9 @@ class HomepageController extends Controller
 {
     public function homepage()
     {
+
+        // $ipAddress = request()->ip();
+
         $news         = News::latest()->get();
         $lastnews     = News::latest()->first();
         $latestnews   = News::latest()->take(4)->get();
@@ -25,8 +28,10 @@ class HomepageController extends Controller
         $categorynews = Category::with('news')->get();
         // return  $categorynews;
         $vots         = Vot::take(1)->latest()->get();
+        // return $vots;
         $divissions   = Division::all();
 
-        return view('frontend.homepage', compact('news', 'latestnews', 'natinoal', 'categorynews', 'lastnews', 'vots', 'divissions'));
+        // return  $ipAddress;
+        return view('frontend.homepage', compact('news', 'latestnews', 'natinoal', 'categorynews', 'lastnews', 'vots', 'divissions', ));
     }
 }

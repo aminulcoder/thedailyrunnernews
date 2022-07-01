@@ -1,4 +1,7 @@
 @extends('backend.layout.app')
+@section('title')
+Create District
+@endsection
 @section('content')
 <div class="container-fluid">
 
@@ -14,8 +17,8 @@
                         <h4 class="page-title">Create District</h4>
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Heshelghor</a></li>
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">eCommerce</a></li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Dailyrunnernews</a></li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Paper</a></li>
                                 <li class="breadcrumb-item active">Category List</li>
                             </ol>
                         </div>
@@ -49,7 +52,8 @@
                                                             @csrf
                                                             <div class="mb-2 row">
                                                                 <label class="col-md-2 col-form-label"
-                                                                    for="simpleinput">Select Division : </label>
+                                                                    for="simpleinput">Select Division :<span
+                                                                    class="text-danger">*</span> </label>
                                                                 <div class="col-md-10">
                                                                     <select class="form-select @error('division_id') is-invalid @enderror" name="division_id">
                                                                         <option selected value="">Select Division</option>
@@ -66,7 +70,8 @@
                                                             </div>
                                                             <div class="mb-2 row">
                                                                 <label class="col-md-2 col-form-label"
-                                                                    for="simpleinput">District Name</label>
+                                                                    for="simpleinput">District Name <span
+                                                                    class="text-danger">*</span></label>
                                                                 <div class="col-md-10">
 
                                                                     <input name="name" type="text"

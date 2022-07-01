@@ -40,6 +40,7 @@ class VotController extends Controller
      */
     public function store(Request $request)
     {
+        // $ipAddress    = request()->ip();
         $request->validate([
             'description' => 'required',
             'start_date'  => 'required',
@@ -56,6 +57,7 @@ class VotController extends Controller
             'description' => $request->description,
             'start_date'  => $request->start_date,
             'end_date'    => $request->end_date,
+
             // 'author_id'              => Auth::user()->id
         ]);
         // return "ok";
@@ -95,7 +97,7 @@ class VotController extends Controller
      */
     public function update(Request $request, $id)
     {
-
+        
 
         if ($request->vot == 'yes') {
             Vot::where('id', $id)->increment('yes');
@@ -119,6 +121,7 @@ class VotController extends Controller
             'description' => $request->description,
             'start_date'  => $request->start_date,
             'end_date'    => $request->end_date,
+
 
         ]);
         return redirect()->route('vot.index')->with('update', 'Successfully Data Updated');

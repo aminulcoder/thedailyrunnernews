@@ -14,7 +14,7 @@ class CategorywisenewsController extends Controller
     {
 
         $category = Category::firstWhere('id', $id);
-        $allnews  = News::where('category_id', $id)->orderBy('id', 'desc')->latest()->paginate(2);
+        $allnews  = News::where('category_id', $id)->orderBy('id', 'desc')->latest()->paginate(10);
         $latestnews   = News::take(6)->latest()->get();
         $latestpost = News::where('category_id', $id)->latest()->first();
 

@@ -1,4 +1,7 @@
 @extends('backend.layout.app')
+@section('title')
+    Tags List
+@endsection
 @section('content')
     <div class="content">
 
@@ -12,8 +15,8 @@
                         <h4 class="page-title">Tags List</h4>
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Heshelghor</a></li>
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">eCommerce</a></li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Dailyrunnernews</a></li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Paper</a></li>
                                 <li class="breadcrumb-item active">Tags List</li>
                             </ol>
                         </div>
@@ -57,7 +60,6 @@
                                             </th>
                                             <th class="all">SN</th>
                                             <th class="all">Tags Name</th>
-
                                             <th style="width: 85px;">Action</th>
                                         </tr>
                                     </thead>

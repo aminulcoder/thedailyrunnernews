@@ -16,6 +16,7 @@ class Vot extends Model
         'no_comment',
         'start_date',
         'end_date',
+        'ip_address',
     ];
 
     protected $dates = ['start_date','end_date'];

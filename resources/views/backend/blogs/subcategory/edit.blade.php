@@ -1,4 +1,7 @@
 @extends('backend.layout.app')
+@section('title')
+   sub category
+@endsection
 @section('content')
     <div class="container-fluid">
         <div class="content">

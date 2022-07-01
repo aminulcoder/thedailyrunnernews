@@ -1,4 +1,8 @@
 @extends('backend.layout.app')
+@section('title')
+
+Online Pull
+@endsection
 @section('content')
     <div class="container-fluid">
         <div class="content">
@@ -12,9 +16,9 @@
                             <h4 class="page-title">Create News</h4>
                             <div class="page-title-right">
                                 <ol class="breadcrumb m-0">
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Heshelghor</a></li>
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">eCommerce</a></li>
-                                    <li class="breadcrumb-item active">News List</li>
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Dailyrunnernews</a></li>
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Paper</a></li>
+                                    <li class="breadcrumb-item active">Vot List</li>
                                 </ol>
                             </div>
                         </div>
@@ -103,7 +107,4 @@
 @endsection
 
 
-@push('script')
 
-
-@endpush

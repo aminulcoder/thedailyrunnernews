@@ -19,6 +19,7 @@ use App\Http\Controllers\Backend\Dashboard\DashboardController as DashboardDashb
 use App\Http\Controllers\Backend\Roles\RolesController;
 use App\Http\Controllers\Backend\Setting\SiteController;
 use App\Http\Controllers\Backend\Users\UsersController;
+use App\Http\Controllers\Backend\Vot\PullController;
 use App\Http\Controllers\Backend\Vot\VotController;
 use App\Http\Controllers\FrontEnd\CategorywisenewsController;
 use Database\Seeders\LocationSeeder;
@@ -74,6 +75,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('tags', TagsController::class);
 
     Route::resource('vot', VotController::class);
+    Route::post('pull/crete',[PullController::class,'pullcreate'])->name('pull.create');
+    Route::post('pull/store',[PullController::class,'pullstore'])->name('pull.store');
 
 });
 

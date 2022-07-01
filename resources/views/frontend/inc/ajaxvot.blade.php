@@ -1,13 +1,22 @@
 @php
 use App\Models\Vot\Vot;
+use App\Models\Pull;
 use Rakibhstu\Banglanumber\NumberToBangla;
 $numto = new NumberToBangla();
 
 $vot = Vot::get()->last();
-if ($vot && $vot->total_vot > 0) {
-    $yes = sprintf('%.2f', (100 * $vot->yes) / $vot->total_vot);
-    $no = sprintf('%.2f', (100 * $vot->no) / $vot->total_vot);
-    $no_comment = sprintf('%.2f', (100 * $vot->no_comment) / $vot->total_vot);
+$pulls = Pull::where('vot_id', $vot->id)->get();
+
+    $totalvot = $pulls->count();
+    $yesvot = Pull::where('vot_id', $vot->id)->where('yes', 1)->count();
+    $novot = Pull::where('vot_id', $vot->id)->where('no', 1)->count();
+    $nocommentvot = Pull::where('vot_id', $vot->id)->where('no_comment', 1)->count();
+
+
+if ($vot && $totalvot > 0) {
+    $yes = sprintf('%.2f', (100 * $yesvot) / $totalvot);
+    $no = sprintf('%.2f', (100 * $novot) / $totalvot);
+    $no_comment = sprintf('%.2f', (100 * $nocommentvot) / $totalvot);
 
 
 }
@@ -23,8 +32,8 @@ if ($vot && $vot->total_vot > 0) {
             <p>{{ $vot->description }}</p>
             <div class="row">
                 <div class="col-sm-12 mt-4">
-                    @if ($vot->yes > 0)
-                        <label for="">হ্যাঁ  ({{ $numto->bnNum($vot->yes)}})</label>
+                    @if ($yesvot > 0)
+                        <label for="">হ্যাঁ  ({{ $numto->bnNum($yesvot)}})</label>
                         <div class="row align-items-center g-0 mb-2 pb-1">
                             <div class="col">
                                 <div class="progress progress-sm">
@@ -41,8 +50,8 @@ if ($vot && $vot->total_vot > 0) {
                         </div>
                     @endif
 
-                    @if ($vot->no > 0)
-                        <label for="">না ({{$numto->bnNum($vot->no)}})</label>
+                    @if ($novot > 0)
+                        <label for="">না ({{$numto->bnNum($novot)}})</label>
                         <div class="row align-items-center g-0 mb-2 pb-1">
                             <div class="col">
                                 <div class="progress progress-sm">
@@ -58,9 +67,9 @@ if ($vot && $vot->total_vot > 0) {
                             </div>
                         </div>
                     @endif
-                    
-                    @if ($vot->no_comment > 0)
-                        <label for=""> মন্তব্য নেই ({{$numto->bnNum($vot->no_comment)}})</label>
+
+                    @if ($nocommentvot > 0)
+                        <label for=""> মন্তব্য নেই ({{$numto->bnNum($nocommentvot)}})</label>
                         <div class="row align-items-center g-0 mb-2 pb-1">
                             <div class="col">
                                 <div class="progress progress-sm">
@@ -83,25 +92,23 @@ if ($vot && $vot->total_vot > 0) {
                 <div id="poll_result"></div>
             </div>
 
-            <form
-            class="mt-1 survey-hide" action="" method="post"
-                id="surveyForm" >
+            <form class="mt-1 survey-hide" action="" method="post" id="surveyForm" >
 
                 <input type="hidden" name="id" value="{{ $vot->id}}">
                 <table cellpadding="0" cellspacing="5" border="0" width="100%" class="survey-tbl mb-2">
                     <tbody>
                         <tr>
                             <td class="text-center">
-                                <input type="radio" name="vot" value="yes ">
+                                <input type="radio" name="vot" value="yes">
                             </td>
                             <td>হ্যাঁ</td>
                             <td class="text-center">
-                                <input type="radio" name="vot"  value="no ">
+                                <input type="radio" name="vot"  value="no">
                             </td>
                             <td>না </td>
 
                             <td class="text-center">
-                                <input type="radio" name="vot"  value="no_comment ">
+                                <input type="radio" name="vot"  value="no_comment">
                             </td>
                             <td>মন্তব্য নেই</td>
                         </tr>

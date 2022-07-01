@@ -23,7 +23,6 @@ class NewsController extends Controller
      */
     public function index()
     {
-
         $news = News::with('category')->latest()->get();
         // return $news;
         return view('backend.blogs.news.news_list', compact('news'));
@@ -67,28 +66,19 @@ class NewsController extends Controller
         $request->validate([
             'title'                 => 'required',
             'content'               => 'required',
-            'meta_title'            => 'required',
             'category_id'           => 'required',
             'thumbnail'             => 'required',
         ], [
             ' title.required'                => 'please enter your title',
             'content.required'               => 'please enter your content',
-            'meta_title.required'            => 'please enter your meta_title',
-            ' video_url.required'            => 'please enter your video_url',
-            ' tags.required'                 => 'please enter your tags',
-            'status.required'                => 'please enter your status',
             ' thumbnail.required'            => 'please enter your thumbnail',
             ' category_id.required'          => 'please enter your category_id',
-            ' division_id.required'          => 'please enter your division_id',
-            'district_id.required'           => 'please enter your district_id',
-            'upazila_id.required'            => 'please enter your upazila_id',
         ]);
 
 
         if ($request->hasFile('thumbnail')) {
             $name = $request->thumbnail->getClientOriginalName();
             $request->thumbnail->storeAs('images', $name, 'public');
-
             News::create([
                 'title'                 => $request->title,
                 'content'               => $request->content,
@@ -198,7 +188,6 @@ class NewsController extends Controller
                 'title'                 => $request->title,
                 'content'               => $request->content,
                 'meta_title'            => $request->meta_title,
-
                 'slug'                  => make_slug($request->title),
                 'blog_meta_description' => $request->blog_meta_description,
                 'video_url'             => $request->video_url,
