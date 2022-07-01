@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Frontend\SinglepostController;
 use App\Http\Controllers\Frontend\SubcategorypostController;
 use App\Http\Controllers\Frontend\SubCategorywiseController;
+use App\Http\Controllers\QrcodeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,3 +53,5 @@ Route::get('search', [SearchController::class, 'search'])->name('search.page');
 
 Route::get('ajaxvot', [AjaxvotController::class, 'index']);
 Route::post('ajax/vot/update', [AjaxvotController::class, 'updateOnlineVot']);
+
+Route::get('qrcode', [QrcodeController::class, 'index'])->name('qrcode');

@@ -43,8 +43,7 @@
                                 <thead>
                                     <tr>
                                         <th>Sl</th>
-                                        <th>thumbnail</th>
-                                        <th style="width: 50px;">title</th>
+                                        <th>title</th>
                                         <th>Category name</th>
                                         <th>status</th>
                                         <th>Action</th>
@@ -61,10 +60,6 @@
                                         <tr role="row" class="odd">
                                             <td class="sorting_1">{{ $serial++ }}</td>
                                             <td>
-                                                <img src="{{ asset('storage/images/' . $item->thumbnail) }}" height="100x"
-                                                    width="200px" alt="{{ $item->thumbnail }}">
-                                            </td>
-                                            <td>
                                                 <h5 class="m-0 d-inline-block align-middle"><a href="#"
                                                         class="text-dark">{{ $item->title }}</a></h5>
                                             </td>
@@ -75,7 +70,13 @@
                                             <td>Published</td>
 
                                             <td>
-
+                                                {{-- <a href="#" class="btn btn-primary btn-sm">QR Code</a> --}}
+                                                <form action="{{route('qrcode')}}" method="get" style="display: inline" target="_blank">
+                                                    @csrf
+                                                    <input type="hidden" name="link" value="{{route('singlenews', $item->id)}}">
+                                                    <input type="hidden" name="id" value="{{$item->id}}">
+                                                    <button type="submit" class="btn btn-primary btn-sm">QR Code</button>
+                                                </form>
                                                 <a href="{{ route('news.edit', $item->id) }}"
                                                     class="btn btn-sm btn-info icon-pencil7">Edit</a>
                                                 <form action="{{ route('news.destroy', $item->id) }}" method="POST"
