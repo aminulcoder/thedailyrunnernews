@@ -38,22 +38,12 @@ $postdate = $bongabda->getDateTime()->format('l jS F Y');
                 </div>
                 <article class="box-white">
                     <div class="padding15 box-white">
-
-
-                        <div class="row">
-                            <div class="col-sm-12" style="margin-bottom:15px;color: red;">
-                            </div>
-                        </div>
-
-                        <h1 class="no-margin" style="margin-bottom:15px !important">{{ $news->title }}</h1>
+                        <h3 class="no-margin" style="margin-bottom:15px !important">{{ $news->title }}</h3>
                         <!-- start -->
                         <div class="row mb-2">
                             <div class="col-sm-8">
                                 <span class="small text-muted time-with-author">
                                     <i class="fa fa fa-clock-o text-danger"></i> {{ $postdate }} <br>
-
-
-
                                 </span>
                             </div>
                         </div>
@@ -71,7 +61,6 @@ $postdate = $bongabda->getDateTime()->format('l jS F Y');
                     </div>
                     <div class="content-details">
                         {!! $news->content !!}
-                        {{-- {{Str::substr($news->content, 0, 200) }} --}}
                     </div>
 
                     <!-- Advertisement B -->

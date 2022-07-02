@@ -12,7 +12,7 @@ use App\Models\Division;
 $divissions = Division::all();
 @endphp
 
-<div class="col-sm-12 col-md-3">
+<div class="col-sm-12 col-md-4 col-xl-3 col-lg-3">
     <div class="rightSideBar">
         <div class="survey-area my-1">
             <div class="card">
@@ -47,7 +47,7 @@ $divissions = Division::all();
                 <div id="latest_news" class="news-feed-latest mt-4">
                     @foreach ($latestnews as $latest)
                         <div class="row">
-                            <div class="col-9">
+                            <div class="col-12">
                                 <a href="{{ route('singlenews', $latest->id) }}">{{ $latest->title }}</a>
                             </div>
                         </div>
@@ -56,7 +56,7 @@ $divissions = Division::all();
                 <div id="most_read_news" style="display: none;" class="news-feed-latest mt-4">
                     @foreach ($latestnews as $latest)
                         <div class="row">
-                            <div class="col-9">
+                            <div class="col-12">
                                 <a href="">{{ $latest->title }}</a>
                             </div>
                         </div>
@@ -82,7 +82,7 @@ $divissions = Division::all();
 
                         <form action="{{ route('location.news', $news->upazila_id) }}" method="GET">
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-xl-6 col-12 bottom-space">
                                     <select class="form-select @error('division_id') is-invalid @enderror"
                                         name="division_id">
                                         <option selected value="">বিভাগ
@@ -93,7 +93,7 @@ $divissions = Division::all();
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-xl-6 col-12 bottom-space">
                                     <select class="form-select @error('district_id') is-invalid @enderror"
                                         name="district_id">
                                         <option selected value="">জেলা</option>
@@ -101,13 +101,16 @@ $divissions = Division::all();
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-6 mt-2">
+                                <div class="col-xl-6 col-12">
                                     <select class="form-select @error('upazila_id') is-invalid @enderror"
                                         name="upazila_id">
                                         <option selected value="">উপজেলা</option>
                                     </select>
                                 </div>
-                                <div class="col-6">
+                            </div>
+                            <div class="row">
+
+                                <div class="col-xl-12 col-12">
                                     <div class="d-grid">
                                         <button type="submit" class="btn btn-danger mt-2">অনুসন্ধান করুন</button>
                                     </div>
@@ -122,107 +125,6 @@ $divissions = Division::all();
 
         <!-- Sidebar button area end -->
         <div class="survey-area my-5" id="onlinevot">
-            {{-- <div class="card">
-                <div class="card-header">
-                    <h4>অনলাইন জরিপ</h4>
-                </div>
-                @if ($vot)
-                    <div class="card-body">
-                        <p>{{ $vot->description }}</p>
-                        <div class="row">
-                            <div class="col-sm-12 mt-4">
-                                @if ($vot->yes > 0)
-                                    <label for="">হ্যাঁ</label>
-                                    <div class="row align-items-center g-0 mb-2 pb-1">
-                                        <div class="col">
-                                            <div class="progress progress-sm">
-                                                <div class="progress-bar bg-success" role="progressbar"
-                                                    style="width:{{ $yes }}%;" aria-valuenow="7"
-                                                    aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-
-                                            <div class="fw-medium ms-2">
-                                                {{ $yes }}%</div>
-                                        </div>
-                                    </div>
-                                @endif
-
-                                @if ($vot->no > 0)
-                                    <label for="">না</label>
-                                    <div class="row align-items-center g-0 mb-2 pb-1">
-                                        <div class="col">
-                                            <div class="progress progress-sm">
-                                                <div class="progress-bar bg-danger" role="progressbar"
-                                                    style="width:{{ $no }}%;" aria-valuenow="0"
-                                                    aria-valuemin="0" aria-valuemax="0"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-
-                                            <div class="fw-medium ms-2">
-                                                {{ $no }}%</div>
-                                        </div>
-                                    </div>
-                                @endif
-
-
-                                @if ($vot->no_comment > 0)
-                                    <label for=""> মন্তব্য নেই</label>
-                                    <div class="row align-items-center g-0 mb-2 pb-1">
-                                        <div class="col">
-                                            <div class="progress progress-sm">
-                                                <div class="progress-bar bg-warning" role="progressbar"
-                                                    style="width: {{ $no_comment }}%;" aria-valuenow="0"
-                                                    aria-valuemin="0" aria-valuemax="0"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <div class="fw-medium ms-2">
-                                                {{ $no_comment }}%</div>
-                                        </div>
-                                    </div>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <div id="poll_result"></div>
-                        </div>
-
-                        <form class="mt-1 survey-hide" action="{{ route('vot.update', $vot->id) }}" method="post"
-                            id="surveyForm">
-
-                            @csrf
-                            @method('PUT')
-                            <table cellpadding="0" cellspacing="5" border="0" width="100%" class="survey-tbl mb-2">
-                                <tbody>
-                                    <tr>
-                                        <td class="text-center">
-                                            <input type="radio" name="vot" value="yes ">
-                                        </td>
-                                        <td>হ্যাঁ </td>
-
-                                        <td class="text-center">
-                                            <input type="radio" name="vot" value="no ">
-                                        </td>
-                                        <td>না </td>
-
-                                        <td class="text-center">
-                                            <input type="radio" name="vot" value="no_comment ">
-                                        </td>
-                                        <td>মন্তব্য নেই</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <button type="submit"  class="btn btn-success p-2 "> মতামত দিন </button>
-
-                        </form>
-
-
-                    </div>
-                @endif
-            </div> --}}
         </div>
 
         <!-- sidebar epaper area start -->

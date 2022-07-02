@@ -288,19 +288,20 @@ a {
 }
 
 .first_lead_news .ld_news_content h1.main_lead_title {
-    font-size: 32px;
+	font-size: 1.5rem;
 }
-
 .first_lead_news:hover .ld_news_image img {
     opacity: 0.85;
 }
-
+.news-feed-area a {
+	font-size: 1rem;
+}
 .first_lead_news .ld_news_content h1 {
-    color: #FFF;
-    font-size: 24px;
-    margin: 0px;
-    margin-bottom: 10px;
-    padding-top: 15px;
+	color: #FFF;
+	font-size: 18px;
+	margin: 0px;
+	margin-bottom: 10px;
+	padding-top: 15px;
 }
 
 .catTitleBackground .left .catName a,
@@ -491,11 +492,10 @@ ul {
 
 }
 
-.news-feed-latest>.row a {
-
-    text-decoration: none;
-    color: black;
-
+.news-feed-latest > .row a {
+	text-decoration: none;
+	color: black;
+	font-size: 15px;
 }
 
 .news-feed-latest .row {
