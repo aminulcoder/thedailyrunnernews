@@ -30,10 +30,10 @@
                     <h4 class="my-0 fw-normal">QR Code</h4>
                   </div>
                   <div class="card-body">
-                    <img src="{{asset('storage/'.$id.'.svg')}}" alt="">
+                    <img src="{{asset('storage/'.$id.'.png')}}" alt="">
                     <br>
 
-                    <a href="{{asset('storage/'.$id.'.svg')}}" class="btn btn-primary my-2" download="{{$id}}">Download</a>
+                    <a href="{{asset('storage/'.$id.'.png')}}" class="btn btn-primary my-2" download="{{$id}}">Download</a>
                   </div>
                 </div>
               </div>

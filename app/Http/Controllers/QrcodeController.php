@@ -10,8 +10,8 @@ class QrcodeController extends Controller
 {
     public function index(Request $request)
     {
-        $filename = $request->id.'.svg';
-        $qrcode =  QrCode::format('svg')->generate($request->link, storage_path('app/public/'.$filename));
+        $filename = $request->id.'.png';
+        $qrcode =  QrCode::format('png')->generate($request->link, storage_path('app/public/'.$filename));
 
         $id = $request->id;
         return view('frontend.qrcode', compact('id'));
