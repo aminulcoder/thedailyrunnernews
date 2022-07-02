@@ -108,11 +108,7 @@ $postdate = $bongabda->getDateTime()->format('l jS F Y');
                         <button id="latest_news_button" class="active">সর্বশেষ</button>
                         <button id="most_read_news_button">সর্বাধিক পঠিত</button>
                     </div>
-
-
                     <div id="latest_news" style="display: none;" class="news-feed-latest mt-4">
-
-
                         @foreach ($latestnews as $latest)
                         <div class="row">
                             <div class="col-9">
@@ -122,14 +118,14 @@ $postdate = $bongabda->getDateTime()->format('l jS F Y');
                     @endforeach
                     </div>
                     <div id="most_read_news" style="display: none;" class="news-feed-latest mt-4">
-                                ggggggggggggg
-                        {{-- @foreach ($latestnews as $latest)
+
+                        @foreach ($latestnews as $latest)
                         <div class="row">
                             <div class="col-9">
                                 <a href="{{ route('singlenews', $latest->id) }}">{{ $latest->title }}</a>
                             </div>
                         </div>
-                    @endforeach --}}
+                    @endforeach
                     </div>
                     <div class="news_feed_all_news_button">
                         <button>সব খবর</button>
@@ -184,11 +180,15 @@ $postdate = $bongabda->getDateTime()->format('l jS F Y');
             background-color: rgb(95, 95, 185);
             color: #fff;
         }
+
+
     </style>
 
 
     <style>
-
+footer#footer {
+    display: none;
+}
     </style>
 @endpush
 @push('og_tag')

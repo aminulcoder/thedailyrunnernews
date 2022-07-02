@@ -18,11 +18,6 @@
             </div>
 
         </div>
-        <div class="scroll-top-wrapper hidden-print show">
-            <span class="scroll-top-inner">
-                <i class="fa fa-2x fa-angle-up"></i>
-            </span>
-        </div>
     </div>
 </footer>
 
