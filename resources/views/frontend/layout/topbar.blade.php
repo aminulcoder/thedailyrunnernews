@@ -16,7 +16,7 @@ use EasyBanglaDate\Types\BnDateTime;
     <div class="header-top">
         <div class="container top-bar-container">
             <div class="row align-items-center">
-                <div class="col-md-7 ">
+                <div class="col-xl-7 col-lg-6 col-md-6 col-12 ">
                     <div class="top-bar-link ">
                         <ul>
                             <li>যশোর</li>
@@ -26,7 +26,7 @@ use EasyBanglaDate\Types\BnDateTime;
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-5 col-sm-12" id="searchdiv">
+                <div class="col-xl-5 col-lg-6 col-md-6 col-12 col-sm-12" id="searchdiv">
                     <div class="top-header-right">
                         <div class="search-container d-lg-block d-none">
                             <form action="{{ route('search.page') }}" method="GET">
@@ -34,7 +34,7 @@ use EasyBanglaDate\Types\BnDateTime;
                                 <button type="submit"><i class="fas fa-search"></i>সার্চ</button>
                             </form>
                         </div>
-                        <div class="top-bar-social-icon d-sm-block d-none">
+                        <div class="top-bar-social-icon d-sm-block ">
                             <a href="https://www.facebook.com/dailyrunnernews" target="_blank"><i class="fab fa-facebook-square"></i></a>
                             <a href=""><i class="fab fa-instagram-square"></i></a>
                             <a href=""><i class="fab fa-twitter-square"></i></a>

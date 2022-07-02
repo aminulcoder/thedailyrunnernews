@@ -2,15 +2,8 @@
 @section('content')
     <section class="big_category_header hidden-xs" style="background-image: url()">
         <div class="container category_cat_head">
-            <h1><a href="{{ route('category.news', $category->id) }}">{{ $category->name }}</a>
+            <h1><a href="{{ route('category.news', $category->id) }}">{{ $category->name }}</a></h1>
 
-            </h1>
-
-        </div>
-        <div class="sub_category_menu">
-            <div class="container">
-
-            </div>
         </div>
     </section>
 
@@ -37,10 +30,8 @@
                         </div>
                         <div class="col-sm-4">
                             <div class="paddingRight10 paddingTop20">
-                                <h1 style="font-size:2.5em;line-height:34px;margin-bottom:10px;"><a
-                                        href="{{ route('singlenews', $latestpost->id) }}">{{ $latestpost->title }}</a>
-                                </h1>
-                                {{ $latestpost->meta_title }}
+                                <a style="font-size: 1.4rem;line-height:1" href="{{ route('singlenews', $latestpost->id) }}">{{ $latestpost->title }}</a>
+                                <p style="margin-top: 10px">{{ $latestpost->meta_title }}</p>
                             </div>
                         </div>
                     </div>
@@ -57,7 +48,7 @@
                 <div class="col-sm-6 ">
                     <div class="single-block cat-block ">
                         <div class="row">
-                            <div class="col-sm-5">
+                            <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-6">
                                 <div class="img-box single-post">
                                     <a href="{{ route('singlenews', $news->id) }}">
                                         <img src="{{ asset('storage/images/' . $news->thumbnail) }}"
@@ -65,7 +56,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-sm-7">
+                            <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-6">
                                 <div class="paddingTop10 paddingRight10">
                                     <h3 style="font-size:1.1em; margin-top:18px">
                                         <a href="{{ route('singlenews', $news->id) }}"
@@ -84,7 +75,7 @@
                 </div>
             </div>
             <div class="col-md-4 ">
-                <div class="news-feed-area mt-4">
+                <div class="news-feed-area my-4">
                     <div class="news-feed-nav">
                         <button id="latest_news_button" class="active">সর্বশেষ</button>
                         <button id="most_read_news_button">সর্বাধিক পঠিত</button>

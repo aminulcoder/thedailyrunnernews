@@ -1,9 +1,8 @@
 <main>
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 col-md-6">
+            <div class="col-sm-12 col-md-6 col-12">
                 <div class="row">
-
                     <div class="col-sm-12" style="padding-top: 20px;">
                         <div class="first_lead_news margin-top-15">
                             <a class="news_top_link" href="{{route('singlenews', $lastnews->id)}}"
@@ -22,10 +21,10 @@
                 </div>
             </div>
 
-            <div class="col-sm-12 col-md-6">
+            <div class="col-sm-12 col-md-6 col-12">
                 <div class="row">
                     @foreach ($latestnews as $latest)
-                        <div class="col-sm-6" style="padding-top: 20px;" >
+                        <div class="col-sm-6 col-6" style="padding-top: 20px;" >
                             <div class="first_lead_news margin-top-15">
                                 <a class="news_top_link" href="{{route('singlenews', $latest->id)}}"
                                     title="{{ $latest->title }}"></a>

@@ -3,7 +3,7 @@
 $categories = App\Models\Blog\Category::with('subcategories')->get();
 
 @endphp
-<div class="main-menu header-sticky" style="background-color: #215837; ">
+<div class="main-menu " style="background-color: #215837; ">
     <div class="container-fluid my-1">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light p-0">
@@ -14,7 +14,7 @@ $categories = App\Models\Blog\Category::with('subcategories')->get();
                     </a>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         @foreach (array_slice(json_decode($categories), 0, 9) as $category)
-                      
+
 
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0 main-menu">
                                 <li><a href="{{ route('category.news', $category->id) }}">{{ $category->name }} <i
