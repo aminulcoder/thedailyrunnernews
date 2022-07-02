@@ -74,8 +74,10 @@
                     {{ $allnews->links() }}
                 </div>
             </div>
+
             <div class="col-md-4 ">
                 <div class="news-feed-area my-4">
+
                     <div class="news-feed-nav">
                         <button id="latest_news_button" class="active">সর্বশেষ</button>
                         <button id="most_read_news_button">সর্বাধিক পঠিত</button>
@@ -93,7 +95,7 @@
                         <button>সব খবর</button>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
     </div>

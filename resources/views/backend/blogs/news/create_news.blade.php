@@ -48,7 +48,6 @@
                                                     class="text-danger">*</span></label>
                                                 <input type="text" name="title" class="form-control  @error('title') is-invalid @enderror " id="title"
                                                     placeholder="Title" spellcheck="false" data-ms-editor="true">
-
                                                 @error('title')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
@@ -56,7 +55,7 @@
                                                 @enderror
                                             </div>
 
-                                            {{-- <div id="summernote"></div> --}}
+
                                             <div class="form-group mt-2">
                                                 <div class="form-group">
                                                     <label for="title">Descrription <span
@@ -140,8 +139,8 @@
 
 
                                                     <div class="form-group my-2">
-                                                        <label>blog_meta_description</label>
-                                                        <textarea name="blog_meta_description" id="summernote" type="text"
+                                                        <label class="mb-1">blog_meta_description</label>
+                                                        <textarea name="blog_meta_description " id="summernote" type="text"
                                                             class="form-control @error('blog_meta_description') is-invalid @enderror"
                                                             rows="5"
                                                             placeholder="Enter your blog meta description details">{{ old('blog_meta_description') }}</textarea>

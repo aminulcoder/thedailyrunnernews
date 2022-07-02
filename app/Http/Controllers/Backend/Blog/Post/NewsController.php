@@ -23,7 +23,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $news = News::with('category')->latest()->get();
+        $news = News::with('category')->latest()->paginate(25);
         // return $news;
         return view('backend.blogs.news.news_list', compact('news'));
     }
