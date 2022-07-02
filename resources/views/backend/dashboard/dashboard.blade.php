@@ -27,7 +27,7 @@
                         <div class="d-flex justify-content-between">
                             <div>
                                 <h5 class="text-muted fw-normal mt-0 text-truncate" title="Campaign Sent">TOTAL USERS</h5>
-                                <h3 class="my-2 py-1"><span data-plugin="counterup">865</span></h3>
+                                <h3 class="my-2 py-1"><span data-plugin="counterup">{{$totalUser}}</span></h3>
                                 <p class="mb-0 text-muted">
                                     <span class="text-success me-2"><span class="mdi mdi-arrow-up-bold"></span> 5.27%</span>
                                     <span class="text-nowrap">Since last month</span>
@@ -49,7 +49,7 @@
                         <div class="d-flex justify-content-between">
                             <div>
                                 <h5 class="text-muted fw-normal mt-0 text-truncate" title="New Leads">TOTAL ADMIN</h5>
-                                <h3 class="my-2 py-1"><span data-plugin="counterup">384</span></h3>
+                                <h3 class="my-2 py-1"><span data-plugin="counterup">{{$totalAdmin}}</span></h3>
                                 <p class="mb-0 text-muted">
                                     <span class="text-danger me-2"><span class="mdi mdi-arrow-down-bold"></span>
                                         3.27%</span>
@@ -72,7 +72,7 @@
                         <div class="d-flex justify-content-between">
                             <div>
                                 <h5 class="text-muted fw-normal mt-0 text-truncate" title="Deals">TOTAL SUB CATEGOREY</h5>
-                                <h3 class="my-2 py-1"><span data-plugin="counterup">34,521</span></h3>
+                                <h3 class="my-2 py-1"><span data-plugin="counterup">{{$totalSubCategory}}</span></h3>
                                 <p class="mb-0 text-muted">
                                     <span class="text-success me-2"><span class="mdi mdi-arrow-up-bold"></span> 8.58%</span>
                                     <span class="text-nowrap">Since last month</span>
@@ -95,7 +95,7 @@
                             <div>
                                 <h5 class="text-muted fw-normal mt-0 text-truncate" title="Booked Revenue">TOTAL ONLINE POLING
                                 </h5>
-                                <h3 class="my-2 py-1">$<span data-plugin="counterup">89,357</span></h3>
+                                <h3 class="my-2 py-1"><span data-plugin="counterup">{{$totalVot}}</span></h3>
                                 <p class="mb-0 text-muted">
                                     <span class="text-success me-2"><span class="mdi mdi-arrow-up-bold"></span>
                                         34.61%</span>
@@ -117,7 +117,7 @@
                         <div class="d-flex justify-content-between">
                             <div>
                                 <h5 class="text-muted fw-normal mt-0 text-truncate" title="Campaign Sent">TOTAL NEWS</h5>
-                                <h3 class="my-2 py-1"><span data-plugin="counterup">865</span></h3>
+                                <h3 class="my-2 py-1"><span data-plugin="counterup">{{$totalNews}}</span></h3>
                                 <p class="mb-0 text-muted">
                                     <span class="text-success me-2"><span class="mdi mdi-arrow-up-bold"></span> 5.27%</span>
                                     <span class="text-nowrap">Since last month</span>
@@ -139,7 +139,7 @@
                         <div class="d-flex justify-content-between">
                             <div>
                                 <h5 class="text-muted fw-normal mt-0 text-truncate" title="New Leads">TOTAL CATEGORIES</h5>
-                                <h3 class="my-2 py-1"><span data-plugin="counterup">384</span></h3>
+                                <h3 class="my-2 py-1"><span data-plugin="counterup">{{$totalCategory}}</span></h3>
                                 <p class="mb-0 text-muted">
                                     <span class="text-danger me-2"><span class="mdi mdi-arrow-down-bold"></span>
                                         3.27%</span>
@@ -311,18 +311,4 @@
     <!-- end Footer -->
 @endsection
 
-@push('script')
-    <!-- Apex js-->
-    <script src="{{ asset('backend/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
-    <script src="{{ asset('backend/assets/libs/moment/min/moment.min.js') }}"></script>
-    <script src="{{ asset('backend/assets/libs/jquery.scrollto/jquery.scrollTo.min.js') }}"></script>
 
-    <!-- TODO js-->
-    <script src="{{ asset('backend/assets/js/pages/jquery.todo.js') }}"></script>
-
-    <!-- Dashboard init-->
-    <script src="{{ asset('backend/assets/js/pages/dashboard-crm.init.js') }}"></script>
-
-    <!-- App js -->
-    <script src="{{ asset('backend/assets/js/app.min.js') }}"></script>
-@endpush

@@ -9,8 +9,8 @@
 
         <ul class="list-unstyled topnav-menu float-end mb-0">
             <li class="dropdown d-none d-lg-inline-block">
-                <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="fullscreen" href="#">
-                    <i class="fe-maximize noti-icon"></i>
+                <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" style="font-size: 25px" data-toggle="fullscreen" href="#">
+                    <i class="fas fa-window-maximize"></i>
                 </a>
             </li>
 
@@ -19,9 +19,10 @@
 
 
             <li class="dropdown notification-list topbar-dropdown">
-                <a class="nav-link dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                <a class="nav-link dropdown-toggle waves-effect waves-light"  style="font-size: 23px" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                     <i class="fa-solid fa-bell"></i>
-                    <span class="badge bg-danger rounded-circle noti-icon-badge">5</span>
+                    {{-- <i class="fe-bell noti-icon"></i> --}}
+                    <span class="badge bg-danger rounded-circle noti-icon-badge" style="font-size: 10px">5</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-lg">
 
@@ -40,7 +41,7 @@
             </li>
 
             <li class="dropdown notification-list topbar-dropdown">
-                <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" style="font-size: 25px" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                     {{-- <img src ="{{asset('/employee/photo/'.  Auth::guard('admin')->user()->photo )}}" width="50px" height="50px" class="rounded-circle" alt=""> --}}
                     <span class="pro-user-name ms-1">
                         <i class="mdi mdi-chevron-down"></i>
@@ -78,7 +79,7 @@
             </li>
 
             <li class="dropdown notification-list">
-                <a href="javascript:void(0);" class="nav-link right-bar-toggle waves-effect waves-light">
+                <a href="javascript:void(0);" style="font-size: 25px" class="nav-link right-bar-toggle waves-effect waves-light">
                     <i class="mdi mdi-cog-outline"></i>
                 </a>
             </li>
@@ -117,15 +118,17 @@
 
 
         </ul>
-        {{-- <div class="clearfix"></div> --}}
+        <div class="clearfix"></div>
     </div>
 </div>
 
 
 
-@push('script')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="{{ asset('backend/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
 {{-- <script src="{{asset('backend/assets/js/pages/fontawesome.init.js')}}"></script> --}}
-{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" integrity="sha512-24XP4a9KVoIinPFUbcnjIjAjtS59PUoxQj3GNVpWc86bCqPuy3YxAcxJrxFCxXe4GHtAumCbO2Ze2bddtuxaRw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+@push('script')
+
 @endpush
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" integrity="sha512-24XP4a9KVoIinPFUbcnjIjAjtS59PUoxQj3GNVpWc86bCqPuy3YxAcxJrxFCxXe4GHtAumCbO2Ze2bddtuxaRw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 

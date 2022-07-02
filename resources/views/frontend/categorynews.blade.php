@@ -83,7 +83,7 @@
                     {{ $allnews->links() }}
                 </div>
             </div>
-            <div class="col-md-4 ">
+            {{-- <div class="col-md-4 ">
                 <div class="news-feed-area mt-4">
                     <div class="news-feed-nav">
                         <button id="latest_news_button" class="active">সর্বশেষ</button>
@@ -102,7 +102,7 @@
                         <button>সব খবর</button>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
     </div>

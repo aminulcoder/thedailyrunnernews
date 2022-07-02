@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -618,4 +618,4 @@
     <script src="{{ asset('frontend/asset/js/script.js') }}"></script>
 </body>
 
-</html>
+</html> --}}

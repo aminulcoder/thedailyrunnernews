@@ -15,11 +15,12 @@
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Dailyrunnernews</a></li>
                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                                <li class="breadcrumb-item active">Datatables</li>
+                                <li class="breadcrumb-item active">News list</li>
                             </ol>
                         </div>
                     </div>
                 </div>
+
             </div>
 
             <!-- end page title -->
@@ -39,14 +40,15 @@
                             </div>
                             </p>
 
-                            <table id="basic-datatable" class="table dt-responsive nowrap w-100"  style="width:100%">
+                            <table class="table table-bordered"  style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>Sl</th>
-                                        <th>title</th>
-                                        <th>Category name</th>
-                                        <th>status</th>
-                                        <th>Action</th>
+                                        <th style="width: 5%">Sl</th>
+                                        <th style="width: 5%">ID</th>
+                                        <th style="width: 40%">title</th>
+                                        <th style="width: 10% ">Category name</th>
+                                        <th style="width: 5% ">status</th>
+                                        <th style="width: 22%">Action</th>
                                     </tr>
                                 </thead>
 
@@ -59,8 +61,10 @@
                                     @foreach ($news as $item)
                                         <tr role="row" class="odd">
                                             <td class="sorting_1">{{ $serial++ }}</td>
+                                            <td class="sorting_1">{{ $item->id}}</td>
+                                           
                                             <td>
-                                                <h5 class="m-0 d-inline-block align-middle"><a href="#"
+                                                <h5 class="m-0 d-inline-block align-middle"     ><a href="#"
                                                         class="text-dark">{{ $item->title }}</a></h5>
                                             </td>
                                             <td>
@@ -93,6 +97,7 @@
                                 </tbody>
                             </table>
 
+                            {{ $news->links() }}
                         </div> <!-- end card body-->
                     </div> <!-- end card -->
                 </div><!-- end col-->
