@@ -496,6 +496,8 @@ ul {
 	text-decoration: none;
 	color: black;
 	font-size: 15px;
+	padding: 5px;
+	display: block;
 }
 
 .news-feed-latest .row {

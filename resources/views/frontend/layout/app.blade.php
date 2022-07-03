@@ -23,6 +23,7 @@
     @yield('OG')
 
     @stack('style')
+
 </head>
 
 <body>

@@ -10,7 +10,7 @@
                         <tbody>
                             <tr>
                                 <td
-                                    style="width: 75px; background: #014224; border: 1px solid #014224;  color: #fff; font-size: 18px; padding: 2px 0 2px 10px">
+                                    style="width: 75px; background: #014224; border: 1px solid #014224;  color: #fff; font-size: 18px; padding: 3px 0px 0px 5px">
                                     শিরোনাম:</td>
                                 <td style="border: 1px solid #014224; padding: 0 5px 0 5px">
                                     <marquee direction="left" onmouseout="this.start()" onmouseover="this.stop()"
