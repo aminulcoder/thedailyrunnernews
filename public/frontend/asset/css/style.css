@@ -629,34 +629,18 @@ ul.footer-menu li a:hover {
     color: red;
 }
 
-.scroll-top-wrapper.show {
-    visibility: visible;
-    cursor: pointer;
-    opacity: 1.0;
-}
 
-.scroll-top-wrapper {
-    position: fixed;
-    opacity: 0;
-    visibility: hidden;
-    overflow: hidden;
+a#scrollUp {
+    background: green;
+    right: 2%;
+    bottom: 6%;
+    color: #fff;
+    width: 40px;
+    height: 40px;
     text-align: center;
-    z-index: 99999999;
-    color: #660404;
-    width: 30px;
-    height: 30px;
-    border: 2px solid #660404;
-    line-height: 20px;
-    right: 30px;
-    bottom: 30px;
-    padding-top: 2px;
-    border-radius: 50px;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
+    line-height: 40px;
+    border-radius: 100%;
 }
-
 element.style {
     margin: 0 0 10px 0;
     width: 100%;

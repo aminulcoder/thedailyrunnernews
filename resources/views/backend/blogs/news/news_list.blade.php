@@ -54,15 +54,14 @@
 
 
                                 <tbody>
-                                    @php
-                                        $serial = 1;
-                                    @endphp
 
-                                    @foreach ($news as $item)
+
+                                    @foreach  ($news as  $item)
+
                                         <tr role="row" class="odd">
-                                            <td class="sorting_1">{{ $serial++ }}</td>
+                                            <th scope="row"> {{ $news->firstItem() + $loop->index }}</th>
                                             <td class="sorting_1">{{ $item->id}}</td>
-                                           
+
                                             <td>
                                                 <h5 class="m-0 d-inline-block align-middle"     ><a href="#"
                                                         class="text-dark">{{ $item->title }}</a></h5>
@@ -96,7 +95,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
-
+                            {{-- {{ $news->appends($_GET)->links() }} --}}
                             {{ $news->links() }}
                         </div> <!-- end card body-->
                     </div> <!-- end card -->

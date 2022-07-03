@@ -29,7 +29,7 @@
     {{-- <link rel="stylesheet" href="{{ asset('backend/assets/css/material/bootstrap.min.css') }}"> --}}
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <!-- icons -->
-    <link href="{{ asset('backend') }}/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('backend/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css">
 
     <link rel="stylesheet" href="{{ asset('backend/assets/css/material/style.css') }}">
@@ -104,7 +104,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
 
-    <script src="/public/backend/assets/js/pages/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('backend/assets/js/pages/bootstrap.bundle.min.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
     <script src="{{ asset('backend/assets/css/material/select2.min.css') }}"></script>
     <script src="{{ asset('backend/assets/js/pages/form_select2.js') }}"></script>
