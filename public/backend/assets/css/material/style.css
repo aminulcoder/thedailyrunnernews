@@ -1,3 +1,16 @@
 .logo-box a span.logo-lg img {
     height: 50px;
 }
+
+ .card.admin_card {
+    border: 1px solid #e1e1e1 !important;
+    box-shadow: transparent !important;
+}
+
+.card-header.admin_card {
+    background: #e1e1e1 !important;
+}
+/*
+.card-header.admin_card h4 {
+    margin: 0;
+} */

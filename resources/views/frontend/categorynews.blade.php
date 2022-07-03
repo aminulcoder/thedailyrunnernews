@@ -95,7 +95,11 @@
                         <button>সব খবর</button>
                     </div>
                 </div>
+<<<<<<< HEAD
             </div> 
+=======
+            </div>
+>>>>>>> 95982e5714c9897e0c858fbbc15341c853d89a0a
 
         </div>
     </div>

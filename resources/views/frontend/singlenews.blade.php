@@ -92,7 +92,7 @@ $postdate = $bongabda->getDateTime()->format('l jS F Y');
 
             {{-- sidebar --}}
             <div class="col-md-4 main-content custom-block">
-                <div class="news-feed-area mt-4">
+                <div class="news-feed-area my-4">
                     <div class="news-feed-nav">
                         <button id="latest_news_button" class="active">সর্বশেষ</button>
                         <button id="most_read_news_button">সর্বাধিক পঠিত</button>
@@ -100,7 +100,7 @@ $postdate = $bongabda->getDateTime()->format('l jS F Y');
                     <div id="latest_news" style="display: none;" class="news-feed-latest mt-4">
                         @foreach ($latestnews as $latest)
                         <div class="row">
-                            <div class="col-9">
+                            <div class="col-12">
                                 <a href="{{ route('singlenews', $latest->id) }}">{{ $latest->title }}</a>
                             </div>
                         </div>
