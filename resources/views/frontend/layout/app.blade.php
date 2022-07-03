@@ -30,8 +30,8 @@
     <title>Thedailyrunnernews</title>
     @yield('OG')
 
-    @stack('style')
 
+    @stack('style')
 
 </head>
 
