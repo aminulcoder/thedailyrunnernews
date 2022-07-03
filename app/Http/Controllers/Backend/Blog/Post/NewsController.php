@@ -161,11 +161,13 @@ class NewsController extends Controller
     public function update(Request $request, $id)
     {
 
+
+        // return $request->all();
         if ($request->hasFile('thumbnail')) {
             $name = $request->thumbnail->getClientOriginalName();
             $request->thumbnail->storeAs('images', $name, 'public');
 
-            News::findOrFail($id)->update([
+            News::where('id',$id)->update([
                 'title'                 => $request->title,
                 'content'               => $request->content,
                 'meta_title'            => $request->meta_title,
@@ -181,9 +183,9 @@ class NewsController extends Controller
                 'district_id'           => $request->district_id,
                 'upazila_id'            => $request->upazila_id,
             ]);
-            return redirect()->route('news.index')->with('success', 'successfully data added');
+            return redirect()->route('news.index')->with('success', 'successfully News updated');
         } else {
-            News::findOrFail($id)->update([
+            News::where('id',$id)->update([
 
                 'title'                 => $request->title,
                 'content'               => $request->content,
@@ -200,7 +202,7 @@ class NewsController extends Controller
                 'upazila_id'            => $request->upazila_id,
 
             ]);
-            return redirect()->route('news.index')->with('success', 'successfully data added');
+            return redirect()->route('news.index')->with('success', 'successfully data updated');
         }
     }
 

@@ -95,7 +95,7 @@
                         <button>সব খবর</button>
                     </div>
                 </div>
-            </div> --}}
+            </div> 
 
         </div>
     </div>
