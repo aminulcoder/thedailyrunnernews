@@ -14,70 +14,68 @@
 
                 {{-- single page start --}}
 
-         @if ($latestpost)
-
-         <div class="row">
-            <div class="col-sm-12">
-                <div class="single-block single-block-thumbnail">
+                @if ($latestpost)
                     <div class="row">
-                        <div class="col-sm-8">
-                            <div class="img-box post-thumbnail">
-                                <a href="{{ route('singlenews', $latestpost->id) }}">
-                                    <img src="{{ asset('storage/images/' . $latestpost->thumbnail) }}"
-                                        class="img-responsive" alt="{{ $latestpost->thumbnail }}">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="paddingRight10 paddingTop20">
-                                <a style="font-size: 1.4rem;line-height:1" href="{{ route('singlenews', $latestpost->id) }}">{{ $latestpost->title }}</a>
-                                <p style="margin-top: 10px">{{ $latestpost->meta_title }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{-- single page ennd --}}
-
-        {{-- category page start --}}
-
-
-        <div class="row my-3" id="loadMoreContent">
-            @foreach ($allnews as $news)
-                <div class="col-sm-6 ">
-                    <div class="single-block cat-block ">
-                        <div class="row">
-                            <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-6">
-                                <div class="img-box single-post">
-                                    <a href="{{ route('singlenews', $news->id) }}">
-                                        <img src="{{ asset('storage/images/' . $news->thumbnail) }}"
-                                            class="img-fluid" alt="{{ $news->thumbnail }}" style="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-6">
-                                <div class="paddingTop10 paddingRight10">
-                                    <h3 style="font-size:1.1em; margin-top:18px">
-                                        <a href="{{ route('singlenews', $news->id) }}"
-                                            title="{{ $news->title }}">{{ $news->title }}</a>
-                                    </h3>
+                        <div class="col-sm-12">
+                            <div class="single-block single-block-thumbnail">
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <div class="img-box post-thumbnail">
+                                            <a href="{{ route('singlenews', $latestpost->id) }}">
+                                                <img src="{{ asset('storage/images/' . $latestpost->thumbnail) }}"
+                                                    class="img-responsive" alt="{{ $latestpost->thumbnail }}">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="paddingRight10 paddingTop20">
+                                            <a style="font-size: 1.4rem;line-height:1"
+                                                href="{{ route('singlenews', $latestpost->id) }}">{{ $latestpost->title }}</a>
+                                            <p style="margin-top: 10px">{{ $latestpost->meta_title }}</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
-        </div>
-         @endif
+                    {{-- single page ennd --}}
+
+                    {{-- category page start --}}
+
+
+                    <div class="row my-3" id="loadMoreContent">
+                        @foreach ($allnews as $news)
+                            <div class="col-sm-6 ">
+                                <div class="single-block cat-block ">
+                                    <div class="row">
+                                        <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-6">
+                                            <div class="img-box single-post">
+                                                <a href="{{ route('singlenews', $news->id) }}">
+                                                    <img src="{{ asset('storage/images/' . $news->thumbnail) }}"
+                                                        class="img-fluid" alt="{{ $news->thumbnail }}" style="">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-6">
+                                            <div class="paddingTop10 paddingRight10">
+                                                <h3 style="font-size:1.1em; margin-top:18px">
+                                                    <a href="{{ route('singlenews', $news->id) }}"
+                                                        title="{{ $news->title }}">{{ $news->title }}</a>
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                @endif
                 <div class="d-felx justify-content-center">
                     {{ $allnews->links() }}
                 </div>
             </div>
-
-            <div class="col-md-4 ">
-                <div class="news-feed-area my-4">
-
+            <div class="col-md-4">
+                <div class="news-feed-area mt-4">
                     <div class="news-feed-nav">
                         <button id="latest_news_button" class="active">সর্বশেষ</button>
                         <button id="most_read_news_button">সর্বাধিক পঠিত</button>
@@ -85,8 +83,17 @@
                     <div id="latest_news" class="news-feed-latest mt-4">
                         @foreach ($latestnews as $latest)
                             <div class="row">
-                                <div class="col-9">
+                                <div class="col-12">
                                     <a href="{{ route('singlenews', $latest->id) }}">{{ $latest->title }}</a>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    <div id="most_read_news" style="display: none;" class="news-feed-latest mt-4">
+                        @foreach ($mostreadnews as $latest)
+                            <div class="row">
+                                <div class="col-12">
+                                    <a href="">{{ $latest->title }}</a>
                                 </div>
                             </div>
                         @endforeach
@@ -95,11 +102,8 @@
                         <button>সব খবর</button>
                     </div>
                 </div>
-<<<<<<< HEAD
-            </div> 
-=======
             </div>
->>>>>>> 95982e5714c9897e0c858fbbc15341c853d89a0a
+
 
         </div>
     </div>

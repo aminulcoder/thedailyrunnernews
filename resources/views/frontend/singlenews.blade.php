@@ -7,22 +7,23 @@ $bongabda = new BnDateTime($news->created_at, new DateTimeZone('Asia/Dhaka'));
 $postdate = $bongabda->getDateTime()->format('l jS F Y');
 
 // echo $news->created_at;
+
 @endphp
 
 @extends('frontend.layout.app')
 @section('OG')
     <!-- Facebook & Linkedit Open Graph -->
-     <meta property="og:url" content="{{ route('singlenews', $news->id) }}" />
+    <meta property="og:url" content="{{ route('singlenews', $news->id) }}" />
     <meta property="og:type" content="news" />
     <meta property="og:title" content="{{ $news->title }}" />
-    <meta property="og:description" content="{{strip_tags($news->content)}}" />
+    <meta property="og:description" content="{{ strip_tags($news->content) }}" />
     <meta property="og:image" content="{{ asset('storage/images/' . $news->thumbnail) }}" />
-     <!-- Twitter Card -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@dailyrunnernews" />
     <meta property="og:title" content="{{ $news->title }}" />
-    <meta property="og:description" content="{{strip_tags($news->content)}} " />
+    <meta property="og:description" content="{{ strip_tags($news->content) }} " />
     <meta property="og:image" content="{{ asset('storage/images/' . $news->thumbnail) }}" />
 @endsection
 
@@ -70,7 +71,13 @@ $postdate = $bongabda->getDateTime()->format('l jS F Y');
 
 
                     <hr>
-                    <a href="#"><i class="fa-solid fa-eye"></i>views</a>
+                    {{-- @foreach ($rendomnews as $random) --}}
+                    <div class="card ">
+
+                        <a href="#"><i class="ion-eye"></i> View : {{ $news->view_count }}</a>
+                    </div>
+
+                    {{-- @endforeach --}}
                     <div class="share-button">
                         <samp style="font-size: 25px"><i class="fa-solid fa-share-nodes"></i> Share!</samp>
                         <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('singlenews', $news->id) }}"
@@ -97,24 +104,24 @@ $postdate = $bongabda->getDateTime()->format('l jS F Y');
                         <button id="latest_news_button" class="active">সর্বশেষ</button>
                         <button id="most_read_news_button">সর্বাধিক পঠিত</button>
                     </div>
-                    <div id="latest_news" style="display: none;" class="news-feed-latest mt-4">
+                    <div id="latest_news" style="display: block;" class="news-feed-latest mt-4">
                         @foreach ($latestnews as $latest)
-                        <div class="row">
-                            <div class="col-12">
-                                <a href="{{ route('singlenews', $latest->id) }}">{{ $latest->title }}</a>
+                            <div class="row">
+                                <div class="col-12">
+                                    <a href="{{ route('singlenews', $latest->id) }}">{{ $latest->title }}</a>
+                                </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
                     </div>
                     <div id="most_read_news" style="display: none;" class="news-feed-latest mt-4">
 
-                        @foreach ($latestnews as $latest)
-                        <div class="row">
-                            <div class="col-9">
-                                <a href="{{ route('singlenews', $latest->id) }}">{{ $latest->title }}</a>
+                        @foreach ($mostreadnews as $latest)
+                            <div class="row">
+                                <div class="col-9">
+                                    <a href="{{ route('singlenews', $latest->id) }}">{{ $latest->title }}</a>
+                                </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
                     </div>
                     <div class="news_feed_all_news_button">
                         <button>সব খবর</button>
@@ -146,8 +153,9 @@ $postdate = $bongabda->getDateTime()->format('l jS F Y');
 
 
     <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0&appId=1048590272558271&autoLogAppEvents=1" nonce="d8pdSeS6"></script>
-
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0&appId=1048590272558271&autoLogAppEvents=1"
+        nonce="d8pdSeS6"></script>
 @endpush
 
 
@@ -169,15 +177,13 @@ $postdate = $bongabda->getDateTime()->format('l jS F Y');
             background-color: rgb(95, 95, 185);
             color: #fff;
         }
-
-
     </style>
 
 
     <style>
-footer#footer {
-    display: none;
-}
+        footer#footer {
+            display: none;
+        }
     </style>
 @endpush
 @push('og_tag')

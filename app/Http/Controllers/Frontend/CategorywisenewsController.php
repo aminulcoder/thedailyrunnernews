@@ -17,10 +17,10 @@ class CategorywisenewsController extends Controller
         $allnews  = News::where('category_id', $id)->orderBy('id', 'desc')->latest()->paginate(10);
         $latestnews   = News::take(6)->latest()->get();
         $latestpost = News::where('category_id', $id)->latest()->first();
-
+        $mostreadnews = News::take(4)->orderBy('view_count', 'desc')->get();
         // return $latestpost;
 
-        return view('frontend.categorynews', compact('category', 'allnews','latestnews','latestpost'));
+        return view('frontend.categorynews', compact('category', 'allnews','latestnews','latestpost' ,'mostreadnews'));
     }
 
 

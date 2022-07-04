@@ -30,8 +30,8 @@ class HomepageController extends Controller
         $vots         = Vot::take(1)->latest()->get();
         // return $vots;
         $divissions   = Division::all();
-
+        $mostreadnews = News::orderBy('view_count', 'desc')->take(4)->get();
         // return  $ipAddress;
-        return view('frontend.homepage', compact('news', 'latestnews', 'natinoal', 'categorynews', 'lastnews', 'vots', 'divissions', ));
+        return view('frontend.homepage', compact('news', 'latestnews', 'natinoal', 'categorynews', 'lastnews', 'vots', 'divissions', 'mostreadnews'));
     }
 }

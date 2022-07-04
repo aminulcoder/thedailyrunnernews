@@ -43,36 +43,35 @@
                             <table class="table table-bordered"  style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th style="width: 5%">Sl</th>
-                                        <th style="width: 5%">ID</th>
-                                        <th style="width: 40%">title</th>
-                                        <th style="width: 10% ">Category name</th>
-                                        <th style="width: 5% ">status</th>
-                                        <th style="width: 22%">Action</th>
+                                        <th  class="text-dark fw-bolder text-center"style="width: 5%">Sl</th>
+                                        <th  class="text-dark fw-bolder text-center"style="width: 5%">ID</th>
+                                        <th class="text-dark fw-bolder text-center" style="width: 40%">title</th>
+                                        <th  class="text-dark fw-bolder text-center"style="width: 10% ">Category name</th>
+                                        <th  class="text-dark fw-bolder text-center"style="width: 5% ">status</th>
+                                        <th  class="text-dark fw-bolder text-center"style="width: 22%">Action</th>
                                     </tr>
                                 </thead>
 
 
                                 <tbody>
 
-
                                     @foreach  ($news as  $item)
 
                                         <tr role="row" class="odd">
-                                            <th scope="row"> {{ $news->firstItem() + $loop->index }}</th>
-                                            <td class="sorting_1">{{ $item->id}}</td>
+                                            <th class="fw-bolder fs-5 text-dark text-center"> {{ $news->firstItem() + $loop->index }}</th>
+                                            <td class="text-dark text-center">{{ $item->id}}</td>
 
                                             <td>
                                                 <h5 class="m-0 d-inline-block align-middle"     ><a href="#"
-                                                        class="text-dark">{{ $item->title }}</a></h5>
+                                                        class="text-dark text-center">{{ $item->title }}</a></h5>
                                             </td>
                                             <td>
-                                                <h5 class="m-0 d-inline-block align-middle"><a href="#"
+                                                <h5 class="m-0 d-inline-block align-middle text-center"><a href="#"
                                                         class="text-dark">{{ $item->category->name }}</a></h5>
                                             </td>
                                             <td>Published</td>
 
-                                            <td>
+                                            <td class="text-center">
                                                 {{-- <a href="#" class="btn btn-primary btn-sm">QR Code</a> --}}
                                                 <form action="{{route('qrcode')}}" method="get" style="display: inline" target="_blank">
                                                     @csrf

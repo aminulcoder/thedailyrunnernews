@@ -54,7 +54,7 @@ $divissions = Division::all();
                     @endforeach
                 </div>
                 <div id="most_read_news" style="display: none;" class="news-feed-latest mt-4">
-                    @foreach ($latestnews as $latest)
+                    @foreach ($mostreadnews as $latest)
                         <div class="row">
                             <div class="col-12">
                                 <a href="">{{ $latest->title }}</a>
