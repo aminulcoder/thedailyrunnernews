@@ -12,6 +12,7 @@ use App\Models\Division;
 use App\Models\Upazila;
 use Illuminate\Http\Request;
 use Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class NewsController extends Controller
@@ -218,5 +219,24 @@ class NewsController extends Controller
         Storage::disk('public')->delete('images/' . $news->image);
         $news->delete();
         return redirect(route('news.index'));
+    }
+
+    public function statusUpdate($id){
+
+        $news = DB::table('news')
+        ->select('status')
+        ->where('id','=' ,$id)
+        ->first();
+
+        if($news->status == 1){
+            $status = '0';
+
+        }else{
+            $status = '1';
+        }
+
+        $values = array('status' => $status);
+        DB::table('news')->where('id',$id)->update($values);
+        return redirect()->route('news.index')->with('success', 'successfully data updated');
     }
 }

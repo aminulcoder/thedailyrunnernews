@@ -1,5 +1,5 @@
 @php
-    $news   = App\Models\Blog\News::latest()->get();
+    $news   = App\Models\Blog\News::active()->latest()->get();
 @endphp
 <section>
     <div class="container">

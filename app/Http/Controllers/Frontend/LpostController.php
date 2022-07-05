@@ -24,11 +24,11 @@ class LpostController extends Controller
                 return $query->where('district_id', $districtid);
             })->when($upzilaid, function ($query, $upzilaid) {
                 return $query->where('upazila_id', $upzilaid);
-            })
+            })->where('status',1)
             ->latest()->paginate(5);
         // return $allnews;
 
-        $latestnews   = News::get();
+        $latestnews   = News::where('status',1)->get();
         $division = Division::all();
         $news = News::get();
         return view('frontend.locationnews', compact('allnews', 'latestnews', 'division', 'upzilla','news'));

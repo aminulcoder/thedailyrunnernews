@@ -9,9 +9,10 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
+
 class News extends Model
 {
-    use HasFactory ,Sluggable;
+    use HasFactory, Sluggable;
     protected $fillable = [
 
         'title',
@@ -42,7 +43,10 @@ class News extends Model
         ];
     }
 
-
+    public function scopeActive($query)
+    {
+        return $query->where('status', 1);
+    }
     public function category()
     {
         return $this->hasOne(Category::class, 'id', 'category_id');

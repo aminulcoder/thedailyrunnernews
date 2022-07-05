@@ -69,7 +69,16 @@
                                                 <h5 class="m-0 d-inline-block align-middle text-center"><a href="#"
                                                         class="text-dark">{{ $item->category->name }}</a></h5>
                                             </td>
-                                            <td>Published</td>
+
+                                            <td>
+                                                <?php if($item->status == 1) {?>
+                                                <a href="{{route('news.status.update',$item->id)}}" class="btn btn-success">Active</a>
+
+                                                <?php }else{?>
+
+                                                    <a href="{{route('news.status.update',$item->id)}}" class="btn btn-danger">Inactive</a>
+                                                    <?php }  ?>
+                                             </td>
 
                                             <td class="text-center">
                                                 {{-- <a href="#" class="btn btn-primary btn-sm">QR Code</a> --}}
@@ -107,10 +116,10 @@
     </div>
 @endsection
 @push('style')
-    <link media="all" type="text/css" rel="stylesheet"
-        href="https://stories.botble.com/vendor/core/plugins/language/css/language.css?v=5.24">
-    <link media="all" type="text/css" rel="stylesheet"
-        href="https://stories.botble.com/vendor/core/core/table/css/table.css?v=5.24">
-    <link media="all" type="text/css" rel="stylesheet"
-        href="https://stories.botble.com/vendor/core/core/base/css/themes/default.css?v=5.24">
+    {{-- <link media="all" type="text/css" rel="stylesheet"
+        href="https://stories.botble.com/vendor/core/plugins/language/css/language.css?v=5.24"> --}}
+    {{-- <link media="all" type="text/css" rel="stylesheet"
+        href="https://stories.botble.com/vendor/core/core/table/css/table.css?v=5.24"> --}}
+    {{-- <link media="all" type="text/css" rel="stylesheet"
+        href="https://stories.botble.com/vendor/core/core/base/css/themes/default.css?v=5.24"> --}}
 @endpush

@@ -20,18 +20,18 @@ class HomepageController extends Controller
     {
 
         // $ipAddress = request()->ip();
-
-        $news         = News::latest()->get();
-        $lastnews     = News::latest()->first();
-        $latestnews   = News::latest()->take(4)->get();
+        $intro          = option('intro');
+        $news         = News::active()->latest()->get();
+        $lastnews     = News::latest()->where('status',1)->first();
+        $latestnews   = News::active()->latest()->take(4)->get();
         $natinoal     = News::take(6)->latest()->get();
         $categorynews = Category::with('news')->get();
         // return  $categorynews;
         $vots         = Vot::take(1)->latest()->get();
         // return $vots;
         $divissions   = Division::all();
-        $mostreadnews = News::orderBy('view_count', 'desc')->take(4)->get();
+        $mostreadnews = News::orderBy('view_count', 'desc')->where('status',1)->take(4)->get();
         // return  $ipAddress;
-        return view('frontend.homepage', compact('news', 'latestnews', 'natinoal', 'categorynews', 'lastnews', 'vots', 'divissions', 'mostreadnews'));
+        return view('frontend.homepage', compact('news', 'latestnews', 'natinoal', 'categorynews', 'lastnews', 'vots', 'divissions', 'mostreadnews' ,'intro'));
     }
 }

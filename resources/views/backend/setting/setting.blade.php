@@ -60,14 +60,15 @@
                     </div>
                 </div> <!-- end col-->
                 <div class="col-sm-9">
-                    <form action="{{ route('admin.setting.store') }}" method="POST" enctype="multipart/form-data">
+
                     <div class="tab-content pt-0">
-                            @csrf
+                        @include('backend.setting.inc.header')
+
+                        
                             @include('backend.setting.inc.contact')
 
                             @include('backend.setting.inc.footer')
                             {{-- Social Media --}}
-                            @include('backend.setting.inc.header')
                             {{-- Contacts --}}
                             @include('backend.setting.inc.payment-setting')
                             {{-- Payment --}}
@@ -75,7 +76,7 @@
                             {{-- -----------logo------- --}}
                             @include('backend.setting.inc.logo')
                         </div>
-                    </form>
+
                     </div> <!-- end col-->
             </div> <!-- end row-->
 
