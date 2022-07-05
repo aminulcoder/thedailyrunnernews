@@ -74,7 +74,7 @@ $postdate = $bongabda->getDateTime()->format('l jS F Y');
                     {{-- @foreach ($rendomnews as $random) --}}
                     <div class="card ">
 
-                        <a href="#"><i class="ion-eye"></i> View : {{ $news->view_count }}</a>
+                        {{-- <a href="#"><i class="ion-eye"></i> View : {{ $news->view_count }}</a> --}}
                     </div>
 
                     {{-- @endforeach --}}
