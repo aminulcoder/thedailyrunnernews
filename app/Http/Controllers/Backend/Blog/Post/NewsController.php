@@ -17,6 +17,11 @@ use Illuminate\Support\Facades\Storage;
 
 class NewsController extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('admin');
+    }
     /**
      * Display a listing of the resource.
      *

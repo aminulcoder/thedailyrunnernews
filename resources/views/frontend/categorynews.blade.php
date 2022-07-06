@@ -1,6 +1,6 @@
 @extends('frontend.layout.app')
 @section('content')
-    <section class="big_category_header hidden-xs" style="background-image: url()">
+    <section class="big_category_header hidden-xs mt-3" style="background-image: url()">
         <div class="container category_cat_head">
             <h1><a href="{{ route('category.news', $category->id) }}">{{ $category->name }}</a></h1>
 
@@ -11,9 +11,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 main-content">
-
                 {{-- single page start --}}
-
                 @if ($latestpost)
                     <div class="row">
                         <div class="col-sm-12">

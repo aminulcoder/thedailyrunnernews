@@ -1,7 +1,7 @@
 @extends('frontend.layout.app')
 @section('content')
-    <section class="big_category_header hidden-xs" style="background-image: url()">
-        <div class="container category_cat_head">
+    <section class="big_category_header hidden-xs mt-2 " style="background-image: url()">
+        <div class="container category_cat_head ">
             <h1><a href="{{ route('subcategory.news', $subcategory->id) }}">{{ $subcategory->name }}</a>
 
             </h1>
@@ -16,13 +16,13 @@
 
     <!-- Menu-body section-start -->
    @if ($latestspost)
-   <div class="container">
+   <div class="container ">
     <div class="row">
         <div class="col-md-8 main-content">
 
             {{-- single page start --}}
 
-            <div class="row">
+            <div class="row ">
                 <div class="col-sm-12">
                     <div class="single-block single-block-thumbnail">
                         <div class="row">
@@ -97,15 +97,14 @@
                     @endforeach
                 </div>
                 <div id="most_read_news" style="display: none;" class="news-feed-latest mt-4">
-                <div class="row">
-
-                    <div class="col-9">
-                        <a href="">সেনাঘাঁটিতে হামলায় ১৮০ বিদেশি ভাড়াটে যোদ্ধা নিহত: রাশিয়া</a>
-
-                    </div>
+                    @foreach ($mostreadnews as $latest)
+                        <div class="row">
+                            <div class="col-12">
+                                <a href="">{{ $latest->title }}</a>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
-
-            </div>
                 <div class="news_feed_all_news_button">
                     <button>সব খবর</button>
                 </div>

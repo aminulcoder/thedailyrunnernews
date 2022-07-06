@@ -17,8 +17,9 @@ class SubcategorypostController extends Controller
         $subcategory = SubCategory::firstWhere('id', $id);
         $allnews     = News::where('sub_category_id', $id)->where('status',1)->orderBy('id', 'desc')->latest()->paginate(10);
 
-        $latestnews  = News::take(6)->latest()->get();
+        $mostreadnews  = News::take(6)->where('status',1)->latest()->get();
+        $latestnews  = News::take(6)->where('status',1)->latest()->get();
         $latestspost = News::where('sub_category_id', $id)->where('status',1)->latest()->first();
-        return view('frontend.subcategorynews', compact('category', 'allnews', 'latestnews', 'subcategory', 'latestspost'));
+        return view('frontend.subcategorynews', compact('category', 'allnews', 'latestnews', 'subcategory', 'latestspost','mostreadnews'));
     }
 }

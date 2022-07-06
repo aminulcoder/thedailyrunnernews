@@ -11,6 +11,11 @@ use Spatie\Permission\Models\Role;
 
 class UsersController extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('admin');
+    }
     /**
      * Display a listing of the resource.
      *

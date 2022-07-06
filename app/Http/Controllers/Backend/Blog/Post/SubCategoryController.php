@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Auth;
 
 class SubCategoryController extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('admin');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -101,7 +106,7 @@ class SubCategoryController extends Controller
     {
 
         SubCategory::findOrFail($id)->update([
-            
+
             'name'             => $request->name,
             'slug'             => make_slug($request->name),
             'description'      => $request->description,

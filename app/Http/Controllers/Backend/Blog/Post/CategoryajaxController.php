@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class CategoryajaxController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('admin');
+    }
     public function CategorytoSubcategory (Request $request, $id)
     {
         // if($request->ajax()){

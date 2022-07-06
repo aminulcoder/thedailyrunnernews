@@ -11,6 +11,11 @@ use \Cviebrock\EloquentSluggable\Services\SlugService;
 
 class UpazilaController extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('admin');
+    }
     /**
      * Display a listing of the resource.
      *

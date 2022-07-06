@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Auth;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 class CategoryController extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('admin');
+    }
     /**
      * Display a listing of the resource.
      *

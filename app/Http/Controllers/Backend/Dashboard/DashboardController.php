@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Auth;
 class DashboardController extends Controller
 {
 
+
+
     public $user;
 
     public function __construct()
@@ -27,9 +29,9 @@ class DashboardController extends Controller
 
    public function index(){
 
-    // if (is_null($this->user) || !$this->user->can('dashboard.view')) {
-    //     abort(403, 'Sorry !! You are Unauthorized to view any dashboard !');
-    // }
+    if (is_null($this->user) || !$this->user->can('dashboard.view')) {
+        abort(403, 'Sorry !! You are Unauthorized to view any dashboard !');
+    }
         $totalVot = Vot::count('description');
         $totalCategory = Category::count('name');
         $totalUser = User::count('name');

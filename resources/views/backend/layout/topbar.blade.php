@@ -50,7 +50,7 @@
                 <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
                     <!-- item-->
                     <div class="dropdown-header noti-title">
-                        <h6 class="text-overflow m-0">{{ Auth::guard('admin')->user()->name }}</h6>
+                        <h6 class="text-overflow m-0">{{ Auth::guard('admin')->user()->name ??  ''}}</h6>
                     </div>
 
                     <!-- item-->

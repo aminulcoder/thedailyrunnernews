@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+    <link rel="shortcut icon" style="height: 50px;0 width:50px" href="{{ asset('backend/assets/images/images/Logo.png copy-01.png') }}">
     <!-- App css -->
     <link href="{{ asset('backend/assets/css/material/bootstrap-material.min.css') }}" rel="stylesheet"
         type="text/css" id="bs-default-stylesheet" />

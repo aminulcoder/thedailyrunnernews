@@ -8,6 +8,10 @@ use App\Models\Setting\SiteSetting;
 
 class SiteController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('admin');
+    }
     public function index()
     {
         $sitetitle      = option('title');
@@ -26,7 +30,7 @@ class SiteController extends Controller
         $working_day    = option('working_day');
         $working_time   = option('working_time');
         $logo           = option('logo');
-     
+
         return view('backend.setting.setting', compact('sitetitle', 'siteEmail', 'siteTelephone', 'facebook', 'facebook_page', 'facebook_group', 'twitter', 'instagram', 'linkedin', 'youtube', 'intro', 'mobile', 'address', 'working_day', 'working_time', 'logo'));
     }
     public function create()

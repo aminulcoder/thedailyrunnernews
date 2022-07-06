@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Auth;
 
 class VotController extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('admin');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -97,7 +102,7 @@ class VotController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
 
         if ($request->vot == 'yes') {
             Vot::where('id', $id)->increment('yes');

@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class LoactionAjaxController extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('admin');
+    }
     public function districtFromDivision(Request $request, $id)
     {
         // if($request->ajax()){

@@ -10,6 +10,11 @@ class PullController extends Controller
 
 
 {
+
+    function __construct()
+    {
+        $this->middleware('admin');
+    }
     public function pullcreate(){
 
         // return view('')
