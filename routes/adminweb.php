@@ -45,15 +45,11 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('roles', RolesController::class, ['name' => 'admin.roles']);
     Route::resource('users', UsersController::class, ['name' => 'admin.users']);
     Route::resource('admins', AdminsController::class, ['name' => 'admin.admins']);
-
-
     // ------------------------------------------Login Routes---------------------------------
     Route::get('/login', [LoginController::class, 'showLoginForm'])->name('admin.login');
     Route::post('/login/submit', [loginController::class, 'login'])->name('admin.login.submit');
-
     //------------------------------------------ Logout Routes------------------------------
     Route::post('/logout/submit', [loginController::class, 'logout'])->name('admin.logout.submit');
-
     // ------------------------------------------Forget Password Routes----------------
     Route::get('/password/reset', [ForgetPasswordController::class, 'showLinkRequestForm'])->name('admin.password.request');
     Route::post('/login/reset/submit', [ForgetPasswordController::class, 'reset'])->name('admin.password.update');
@@ -63,7 +59,6 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('district', DistrictController::class);
     Route::resource('upazila', UpazilaController::class);
     //----------------------------------------------------setting----------------------------------
-
     Route::group(['prefix' => 'setting'], function () {
         Route::get('/', [SiteController::class, 'index'])->name('admin.setting.index');
         Route::get('/create', [SiteController::class, 'create'])->name('admin.setting.create');
@@ -101,8 +96,6 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('pull/crete', [PullController::class, 'pullcreate'])->name('pull.create');
     Route::post('pull/store', [PullController::class, 'pullstore'])->name('pull.store');
 });
-
-
 
 Route::get('district-from-division/{id}', [LoactionAjaxController::class, 'districtFromDivision'])->name('districtFromDivision');
 Route::get('/upazila-from-district/{id}', [LoactionAjaxController::class, 'upazilaFromDistrict'])->name('upazilaFromDistrict');

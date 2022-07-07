@@ -1,6 +1,6 @@
 @extends('backend.auth.auth_master')
 @section('auth_title')
-Login | Admin Panel
+    Login | Admin Panel
 @endsection
 
 @section('auth-content')
@@ -16,15 +16,15 @@ Login | Admin Panel
                                 <div class="auth-logo">
                                     <a href="index.html" class="logo logo-dark text-center">
                                         <span class="logo-lg">
-                                            <img src="{{ asset('backend/assets/images/images/daily runner for heshelghor-01.png') }}" alt=""
-                                             height="50"  >
+                                            <img src="{{ asset('backend/assets/images/images/daily runner for heshelghor-01.png') }}"
+                                                alt="" height="50">
                                         </span>
                                     </a>
 
                                     <a href="index.html" class="logo logo-light text-center">
                                         <span class="logo-lg">
-                                            <img src="{{ asset('backend/assets/images/images/logo-light.png') }}" alt=""
-                                                height="22">
+                                            <img src="{{ asset('backend/assets/images/images/logo-light.png') }}"
+                                                alt="" height="22">
                                         </span>
                                     </a>
                                 </div>
@@ -36,8 +36,8 @@ Login | Admin Panel
                                 @csrf
                                 <div class="mb-2">
                                     <label for="emailaddress" class="form-label">Email address</label>
-                                    <input class="form-control" type="text" name="email" id="emailaddress" required=""
-                                        placeholder="Enter your email">
+                                    <input class="form-control" type="text" name="email" id="emailaddress"
+                                        required="" placeholder="Enter your email">
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -58,18 +58,18 @@ Login | Admin Panel
                                         @enderror
                                     </div>
                                 </div>
-                                {{-- <div class="mb-3">
+                                <div class="mb-3">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="checkbox-signin"name="remember" checked>
+                                        <input class="form-check-input" type="checkbox" id="checkbox-signin"name="remember"
+                                            checked>
                                         <label class="form-check-label" for="checkbox-signin">
                                             Remember me
                                         </label>
                                     </div>
-                                </div> --}}
 
-                                <div class="d-grid mb-0 text-center">
-                                    <button class="btn btn-primary" type="submit"> Log In </button>
-                                </div>
+                                    <div class="d-grid mb-0 text-center">
+                                        <button class="btn btn-primary" type="submit"> Log In </button>
+                                    </div>
 
                             </form>
 

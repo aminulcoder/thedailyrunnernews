@@ -166,8 +166,6 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-
         // return $request->all();
         if ($request->hasFile('thumbnail')) {
             $name = $request->thumbnail->getClientOriginalName();

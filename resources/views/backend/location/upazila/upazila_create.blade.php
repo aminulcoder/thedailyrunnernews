@@ -16,7 +16,7 @@
                                 <ol class="breadcrumb m-0">
                                     <li class="breadcrumb-item"><a href="javascript: void(0);">Dailyrunnernews</a></li>
                                     <li class="breadcrumb-item"><a href="javascript: void(0);">Paper</a></li>
-                                    <li class="breadcrumb-item active">Category List</li>
+                                    <li class="breadcrumb-item active">Upzilla</li>
                                 </ol>
                             </div>
                         </div>
